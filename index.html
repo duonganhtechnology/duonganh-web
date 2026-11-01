@@ -45,7 +45,6 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
         h1, h2, h3, h4, .font-brand { font-family: 'Montserrat', sans-serif; }
         
-        /* Metallic Gold Gradient Text */
         .text-gold-gradient {
             background: linear-gradient(135deg, #FFE259 0%, #FFA751 100%);
             -webkit-background-clip: text;
@@ -61,10 +60,6 @@
 
         .bg-gold-gradient {
             background: linear-gradient(135deg, #facc15 0%, #eab308 50%, #ca8a04 100%);
-        }
-
-        .border-gold-gradient {
-            border-image: linear-gradient(to right, #facc15, #ca8a04) 1;
         }
 
         .glass-gold-card {
@@ -91,15 +86,13 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-24">
                 
-                <!-- BRAND LOGO (Matches user logo image dynamically) -->
+                <!-- BRAND LOGO -->
                 <div class="flex items-center gap-3 cursor-pointer py-2" onclick="showSection('home')">
-                    <!-- Stylized DA Logo Circle -->
                     <div class="relative flex items-center justify-center w-12 h-12 rounded-full border-2 border-amber-400 bg-gradient-to-br from-zinc-900 via-black to-zinc-900 shadow-gold-glow group">
                         <div class="absolute inset-0.5 rounded-full border border-amber-500/40"></div>
                         <span class="font-brand font-black text-xl tracking-tighter text-gold-metallic">DA</span>
                     </div>
 
-                    <!-- Brand Typography -->
                     <div class="flex flex-col justify-center">
                         <span class="font-brand font-black text-xl sm:text-2xl tracking-tight text-gold-metallic leading-none uppercase">
                             DƯƠNG ANH
@@ -124,10 +117,10 @@
                     <button onclick="showSection('posts')" class="nav-btn px-3 py-2 rounded-lg text-xs font-bold text-zinc-300 hover:text-gold-400 hover:bg-zinc-900 transition">TIN TỨC</button>
                 </nav>
 
-                <!-- ADMIN BUTTON & MOBILE TRIGGER -->
+                <!-- ADMIN BUTTON (GẮN KHÓA XÁC THỰC) & MOBILE TRIGGER -->
                 <div class="flex items-center gap-3">
-                    <button onclick="showSection('admin')" class="px-4 py-2.5 bg-gold-gradient hover:opacity-90 text-black font-extrabold text-xs rounded-xl shadow-gold-glow transition flex items-center gap-2">
-                        <i class="fa-solid fa-shield-halved"></i>
+                    <button onclick="toggleAdminAccess()" class="px-4 py-2.5 bg-gold-gradient hover:opacity-90 text-black font-extrabold text-xs rounded-xl shadow-gold-glow transition flex items-center gap-2">
+                        <i class="fa-solid fa-lock"></i>
                         <span>QUẢN TRỊ</span>
                     </button>
                     <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden text-zinc-300 hover:text-amber-400 p-2">
@@ -153,12 +146,10 @@
 
         <!-- SECTION 0: HOME HERO -->
         <section id="sec-home" class="page-section">
-            <!-- Hero Banner -->
             <div class="relative overflow-hidden bg-gradient-to-b from-black via-zinc-950 to-dark-base py-16 sm:py-24 border-b border-zinc-800">
                 <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#eab308_1px,transparent_1px)] [background-size:28px_28px]"></div>
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                        
                         <div class="lg:col-span-7 space-y-6">
                             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/40 text-gold-400 text-xs font-bold uppercase tracking-wider">
                                 <i class="fa-solid fa-award text-gold-400"></i> CÔNG TY TNHH KỸ THUẬT CÔNG NGHỆ DƯƠNG ANH
@@ -185,7 +176,6 @@
                             </div>
                         </div>
 
-                        <!-- Hero Showcase Card -->
                         <div class="lg:col-span-5">
                             <div class="relative mx-auto max-w-md lg:max-w-none">
                                 <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-amber-500 to-yellow-600 opacity-30 blur-xl"></div>
@@ -205,7 +195,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -219,7 +208,6 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Vehicles Card -->
                     <div onclick="showSection('vehicles')" class="glass-gold-card p-6 rounded-2xl cursor-pointer group">
                         <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-400 text-2xl font-bold mb-4 border border-amber-500/20 group-hover:scale-110 transition">
                             <i class="fa-solid fa-truck-ramp-box"></i>
@@ -231,7 +219,6 @@
                         </div>
                     </div>
 
-                    <!-- Tech Card -->
                     <div onclick="showSection('technicians')" class="glass-gold-card p-6 rounded-2xl cursor-pointer group">
                         <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-400 text-2xl font-bold mb-4 border border-amber-500/20 group-hover:scale-110 transition">
                             <i class="fa-solid fa-user-gear"></i>
@@ -243,7 +230,6 @@
                         </div>
                     </div>
 
-                    <!-- Supplier Card -->
                     <div onclick="showSection('suppliers')" class="glass-gold-card p-6 rounded-2xl cursor-pointer group">
                         <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-400 text-2xl font-bold mb-4 border border-amber-500/20 group-hover:scale-110 transition">
                             <i class="fa-solid fa-boxes-packing"></i>
@@ -258,7 +244,7 @@
             </div>
         </section>
 
-        <!-- SECTION 1: SẢN PHẨM MÁY MÓC DƯƠNG ANH -->
+        <!-- SECTION 1: SẢN PHẨM MÁY MÓC -->
         <section id="sec-products" class="page-section hidden py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-zinc-800 gap-4">
                 <div>
@@ -271,10 +257,7 @@
                     <button onclick="filterProducts('Dây chuyền')" class="prod-cat-btn px-4 py-2 bg-zinc-900 border border-zinc-800 hover:border-amber-500/40 text-zinc-300 rounded-lg text-xs font-bold">Dây Chuyền Tự Động</button>
                 </div>
             </div>
-
-            <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-                <!-- JS populated -->
-            </div>
+            <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8"></div>
         </section>
 
         <!-- SECTION 2: TÌM XE VẬN CHUYỂN -->
@@ -309,10 +292,7 @@
                     </div>
                 </div>
             </div>
-
-            <div id="vehicles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Loaded via JS -->
-            </div>
+            <div id="vehicles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
         </section>
 
         <!-- SECTION 3: TÌM THỢ KỸ THUẬT -->
@@ -346,10 +326,7 @@
                     </div>
                 </div>
             </div>
-
-            <div id="technicians-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Loaded via JS -->
-            </div>
+            <div id="technicians-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
         </section>
 
         <!-- SECTION 4: VẬT TƯ ĐIỆN & PHỤ GIA -->
@@ -378,10 +355,7 @@
                     </div>
                 </div>
             </div>
-
-            <div id="suppliers-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- JS populated -->
-            </div>
+            <div id="suppliers-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
         </section>
 
         <!-- SECTION 5: TIN TỨC NGÀNH -->
@@ -390,13 +364,10 @@
                 <h2 class="text-2xl sm:text-3xl font-black text-white uppercase">TIN TỨC & KIẾN THỨC KỸ THUẬT</h2>
                 <p class="text-xs text-zinc-400 mt-1">Kinh nghiệm vận hành máy móc giò chả, bảo trì tủ điện tự động hóa.</p>
             </div>
-
-            <div id="posts-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Loaded via JS -->
-            </div>
+            <div id="posts-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
         </section>
 
-        <!-- SECTION 6: QUẢN TRỊ ADMIN -->
+        <!-- SECTION 6: QUẢN TRỊ ADMIN (KHÓA BẢO MẬT) -->
         <section id="sec-admin" class="page-section hidden py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-zinc-950 p-6 sm:p-8 rounded-2xl border border-amber-500/40 shadow-2xl">
                 <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4 border-b border-zinc-800 pb-6 mb-8">
@@ -406,9 +377,14 @@
                         </h2>
                         <p class="text-xs text-zinc-400 mt-1">Cập nhật trực tiếp máy móc, nhà xe, thợ kỹ thuật, cửa hàng và bài viết vào CSDL Supabase.</p>
                     </div>
-                    <button onclick="exportDataBackup()" class="px-4 py-2.5 bg-zinc-900 hover:bg-zinc-800 text-amber-400 rounded-xl text-xs font-bold flex items-center gap-2 border border-amber-500/30">
-                        <i class="fa-solid fa-cloud-arrow-down text-amber-400"></i> Sao Lưu Dữ Liệu (Backup)
-                    </button>
+                    <div class="flex gap-2">
+                        <button onclick="exportDataBackup()" class="px-4 py-2.5 bg-zinc-900 hover:bg-zinc-800 text-amber-400 rounded-xl text-xs font-bold flex items-center gap-2 border border-amber-500/30">
+                            <i class="fa-solid fa-cloud-arrow-down text-amber-400"></i> Sao Lưu (Backup)
+                        </button>
+                        <button onclick="handleLogout()" class="px-4 py-2.5 bg-red-950/60 hover:bg-red-900 text-red-400 rounded-xl text-xs font-bold flex items-center gap-2 border border-red-500/30">
+                            <i class="fa-solid fa-right-from-bracket"></i> Đăng Xuất
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Admin Sub-tabs -->
@@ -459,7 +435,7 @@
                     <h3 class="text-sm font-bold text-amber-400 uppercase tracking-wider mb-2">Thêm Nhà Xe Vận Chuyển</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-xs text-zinc-400 mb-1">Tên Bãi Xe / Tải Xế *</label>
+                            <label class="block text-xs text-zinc-400 mb-1">Tên Bãi Xe / Tài Xế *</label>
                             <input type="text" id="v-title" required placeholder="VD: Xe Cẩu Tự Hành Hùng Phát" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm text-white">
                         </div>
                         <div>
@@ -489,7 +465,7 @@
                         <label class="block text-xs text-zinc-400 mb-1">Link Ảnh Xe (Tùy chọn)</label>
                         <input type="url" id="v-img" placeholder="https://..." class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm text-white">
                     </div>
-                    <button type="submit" class="px-6 py-3 bg-gold-gradient hover:opacity-90 text-black font-extrabold rounded-xl text-xs transition">LƯU KHÓA NHÀ XE</button>
+                    <button type="submit" class="px-6 py-3 bg-gold-gradient hover:opacity-90 text-black font-extrabold rounded-xl text-xs transition">LƯU NHÀ XE</button>
                 </form>
 
                 <!-- Form 3: Add Tech -->
@@ -632,6 +608,37 @@
         </div>
     </footer>
 
+    <!-- MODAL ĐĂNG NHẬP BẢO MẬT (SUPABASE AUTH) -->
+    <div id="login-modal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
+        <div class="bg-zinc-950 border border-amber-500/40 rounded-2xl p-6 sm:p-8 w-full max-w-md text-white shadow-2xl space-y-5 relative">
+            <button onclick="closeLoginModal()" class="absolute top-4 right-4 text-zinc-400 hover:text-white text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="text-center">
+                <div class="w-12 h-12 bg-amber-500/10 rounded-full border border-amber-500/30 flex items-center justify-center mx-auto mb-3 text-amber-400 text-xl">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3 class="text-xl font-black text-gold-metallic uppercase">ĐĂNG NHẬP QUẢN TRỊ</h3>
+                <p class="text-xs text-zinc-400 mt-1">Vui lòng đăng nhập tài khoản Supabase để tiếp tục</p>
+            </div>
+            <form id="login-form" onsubmit="handleLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-zinc-300 mb-1">Email Quản Trị</label>
+                    <input type="email" id="admin-email" required placeholder="admin@duonganh.vn" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-amber-400">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-zinc-300 mb-1">Mật Khẩu</label>
+                    <input type="password" id="admin-password" required placeholder="••••••••" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-amber-400">
+                </div>
+                <div id="login-error" class="text-red-500 text-xs hidden text-center font-semibold">Email hoặc mật khẩu không chính xác!</div>
+                <div class="flex gap-3 pt-2">
+                    <button type="button" onclick="closeLoginModal()" class="w-1/2 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 font-bold py-3 rounded-xl text-xs transition">HỦY</button>
+                    <button type="submit" class="w-1/2 bg-gold-gradient hover:opacity-90 text-black font-extrabold py-3 rounded-xl text-xs transition">ĐĂNG NHẬP</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- JAVASCRIPT & SUPABASE INTERACTION -->
     <script>
         const SUPABASE_URL = 'https://eoyrhmahlaatoodgoxtig.supabase.co';
@@ -667,7 +674,6 @@
             try {
                 if (window.supabase) {
                     supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-                    showToast('Kết nối cơ sở dữ liệu Supabase thành công!', 'success');
                 }
             } catch (err) {
                 console.warn('Supabase loading notice:', err);
@@ -676,6 +682,57 @@
             showSection('home');
             loadAllData();
         };
+
+        // --- SUPABASE AUTH & ADMIN ACCESS CONTROL ---
+        async function toggleAdminAccess() {
+            if (!supabaseClient) {
+                document.getElementById('login-modal').classList.remove('hidden');
+                return;
+            }
+            const { data: { session } } = await supabaseClient.auth.getSession();
+            if (session) {
+                showSection('admin');
+            } else {
+                document.getElementById('login-modal').classList.remove('hidden');
+            }
+        }
+
+        function closeLoginModal() {
+            document.getElementById('login-modal').classList.add('hidden');
+            document.getElementById('login-error').classList.add('hidden');
+        }
+
+        async function handleLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('admin-email').value;
+            const password = document.getElementById('admin-password').value;
+            const errorEl = document.getElementById('login-error');
+
+            if (!supabaseClient) {
+                showToast('Chưa kết nối Supabase!', 'error');
+                return;
+            }
+
+            const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
+
+            if (error) {
+                errorEl.innerText = 'Email hoặc mật khẩu không chính xác!';
+                errorEl.classList.remove('hidden');
+            } else {
+                errorEl.classList.add('hidden');
+                closeLoginModal();
+                showToast('Đăng nhập Quản Trị thành công!', 'success');
+                showSection('admin');
+            }
+        }
+
+        async function handleLogout() {
+            if (supabaseClient) {
+                await supabaseClient.auth.signOut();
+            }
+            showToast('Đã đăng xuất tài khoản quản trị!', 'info');
+            showSection('home');
+        }
 
         function showSection(sectionId) {
             const sections = document.querySelectorAll('.page-section');
@@ -1059,68 +1116,6 @@
             dlAnchor.remove();
             showToast('Đã xuất file dữ liệu dự phòng về máy!', 'success');
         }
-    <!-- Form Đăng Nhập Admin (Popup) -->
-<div id="login-modal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-  <div class="bg-[#121214] border border-[#27272a] rounded-xl p-6 w-full max-w-md text-white shadow-2xl">
-    <h3 class="text-xl font-bold text-[#facc15] mb-4 text-center">ĐĂNG NHẬP QUẢN TRỊ</h3>
-    <form id="login-form" onsubmit="handleLogin(event)" class="space-y-4">
-      <div>
-        <label class="block text-sm text-gray-400 mb-1">Email Quản Trị</label>
-        <input type="email" id="admin-email" required class="w-full bg-[#18181b] border border-[#27272a] rounded-lg p-3 text-white focus:outline-none focus:border-[#facc15]">
-      </div>
-      <div>
-        <label class="block text-sm text-gray-400 mb-1">Mật Khẩu</label>
-        <input type="password" id="admin-password" required class="w-full bg-[#18181b] border border-[#27272a] rounded-lg p-3 text-white focus:outline-none focus:border-[#facc15]">
-      </div>
-      <div id="login-error" class="text-red-500 text-sm hidden">Email hoặc mật khẩu không chính xác!</div>
-      <div class="flex gap-3 pt-2">
-        <button type="button" onclick="closeLoginModal()" class="w-1/2 bg-gray-700 hover:bg-gray-600 text-white font-bold py-2.5 rounded-lg transition">Hủy</button>
-        <button type="submit" class="w-1/2 bg-[#facc15] hover:bg-[#eab308] text-black font-bold py-2.5 rounded-lg transition">Đăng Nhập</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<script>
-  // Hàm xử lý Đăng nhập Supabase
-  async function handleLogin(e) {
-    e.preventDefault();
-    const email = document.getElementById('admin-email').value;
-    const password = document.getElementById('admin-password').value;
-    const errorEl = document.getElementById('login-error');
-
-    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-
-    if (error) {
-      errorEl.classList.remove('hidden');
-    } else {
-      errorEl.classList.add('hidden');
-      closeLoginModal();
-      showAdminPanel();
-    }
-  }
-
-  // Mở modal đăng nhập khi bấm nút QUẢN TRỊ
-  async function toggleAdminAccess() {
-    const { data: { session } } = await supabase.auth.getSession();
-    if (session) {
-      showAdminPanel();
-    } else {
-      document.getElementById('login-modal').classList.remove('hidden');
-    }
-  }
-
-  function closeLoginModal() {
-    document.getElementById('login-modal').classList.add('hidden');
-  }
-
-  function showAdminPanel() {
-    const adminPanel = document.getElementById('admin-panel');
-    if (adminPanel) {
-      adminPanel.classList.remove('hidden');
-      adminPanel.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-</script>
+    </script>
 </body>
 </html>
