@@ -1059,6 +1059,68 @@
             dlAnchor.remove();
             showToast('Đã xuất file dữ liệu dự phòng về máy!', 'success');
         }
-    </script>
+    <!-- Form Đăng Nhập Admin (Popup) -->
+<div id="login-modal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+  <div class="bg-[#121214] border border-[#27272a] rounded-xl p-6 w-full max-w-md text-white shadow-2xl">
+    <h3 class="text-xl font-bold text-[#facc15] mb-4 text-center">ĐĂNG NHẬP QUẢN TRỊ</h3>
+    <form id="login-form" onsubmit="handleLogin(event)" class="space-y-4">
+      <div>
+        <label class="block text-sm text-gray-400 mb-1">Email Quản Trị</label>
+        <input type="email" id="admin-email" required class="w-full bg-[#18181b] border border-[#27272a] rounded-lg p-3 text-white focus:outline-none focus:border-[#facc15]">
+      </div>
+      <div>
+        <label class="block text-sm text-gray-400 mb-1">Mật Khẩu</label>
+        <input type="password" id="admin-password" required class="w-full bg-[#18181b] border border-[#27272a] rounded-lg p-3 text-white focus:outline-none focus:border-[#facc15]">
+      </div>
+      <div id="login-error" class="text-red-500 text-sm hidden">Email hoặc mật khẩu không chính xác!</div>
+      <div class="flex gap-3 pt-2">
+        <button type="button" onclick="closeLoginModal()" class="w-1/2 bg-gray-700 hover:bg-gray-600 text-white font-bold py-2.5 rounded-lg transition">Hủy</button>
+        <button type="submit" class="w-1/2 bg-[#facc15] hover:bg-[#eab308] text-black font-bold py-2.5 rounded-lg transition">Đăng Nhập</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Hàm xử lý Đăng nhập Supabase
+  async function handleLogin(e) {
+    e.preventDefault();
+    const email = document.getElementById('admin-email').value;
+    const password = document.getElementById('admin-password').value;
+    const errorEl = document.getElementById('login-error');
+
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+
+    if (error) {
+      errorEl.classList.remove('hidden');
+    } else {
+      errorEl.classList.add('hidden');
+      closeLoginModal();
+      showAdminPanel();
+    }
+  }
+
+  // Mở modal đăng nhập khi bấm nút QUẢN TRỊ
+  async function toggleAdminAccess() {
+    const { data: { session } } = await supabase.auth.getSession();
+    if (session) {
+      showAdminPanel();
+    } else {
+      document.getElementById('login-modal').classList.remove('hidden');
+    }
+  }
+
+  function closeLoginModal() {
+    document.getElementById('login-modal').classList.add('hidden');
+  }
+
+  function showAdminPanel() {
+    const adminPanel = document.getElementById('admin-panel');
+    if (adminPanel) {
+      adminPanel.classList.remove('hidden');
+      adminPanel.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+</script>
 </body>
 </html>
