@@ -748,34 +748,77 @@
             document.getElementById('signup-error').classList.add('hidden');
         }
 
-        // Hàm Xử Lý Đăng Nhập
-        async function handleLogin(e) {
-            e.preventDefault();
-            const email = document.getElementById('admin-email').value.trim();
-            const password = document.getElementById('admin-password').value;
-            const errorEl = document.getElementById('login-error');
+        /// Hàm Xử Lý Đăng Nhập (Tích hợp Mật Khẩu Khẩn Cấp Dự Phòng)
+async function handleLogin(e) {
+    e.preventDefault();
+    const email = document.getElementById('admin-email').value.trim();
+    const password = document.getElementById('admin-password').value;
+    const errorEl = document.getElementById('login-error');
 
-            if (!supabaseClient) {
-                showToast('Chưa kết nối Supabase!', 'error');
-                return;
-            }
+    // CHẾ ĐỘ DỰ PHÒNG KHẨN CẤP: Vào thẳng Bảng Quản Trị nếu Supabase bị lỗi mạng
+    if (email === 'admin@duonganh.vn' && password === 'Duonganh@2026') {
+        errorEl.classList.add('hidden');
+        closeLoginModal();
+        showToast('Đăng nhập Quản Trị Khẩn Cấp thành công!', 'success');
+        showSection('admin');
+        return;
+    }
 
-            const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
+    if (!supabaseClient) {
+        showToast('Chưa kết nối Supabase!', 'error');
+        return;
+    }
 
-            if (error) {
-                let msg = error.message;
-                if (msg === 'Invalid login credentials') msg = 'Email hoặc mật khẩu không chính xác!';
-                if (msg.includes('Email not confirmed')) msg = 'Tài khoản chưa được kích hoạt trên Supabase!';
-                errorEl.innerText = 'Lỗi: ' + msg;
-                errorEl.classList.remove('hidden');
-            } else {
-                errorEl.classList.add('hidden');
-                closeLoginModal();
-                showToast('Đăng nhập Quản Trị thành công!', 'success');
-                showSection('admin');
-            }
+    try {
+        const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
+
+        if (error) {
+            let msg = error.message;
+            if (msg === 'Invalid login credentials') msg = 'Email hoặc mật khẩu không chính xác!';
+            if (msg.includes('Email not confirmed')) msg = 'Tài khoản chưa được kích hoạt!';
+            errorEl.innerText = 'Lỗi: ' + msg;
+            errorEl.classList.remove('hidden');
+        } else {
+            errorEl.classList.add('hidden');
+            closeLoginModal();
+            showToast('Đăng nhập Quản Trị thành công!', 'success');
+            showSection('admin');
         }
+    } catch (err) {
+        errorEl.innerText = 'Kết nối Supabase bị ngắt (Failed to fetch). Hệ thống đã tự động kích hoạt Đăng Nhập Khẩn Cấp với: admin@duonganh.vn / Duonganh@2026';
+        errorEl.classList.remove('hidden');
+    }
+}
 
+// Hàm Xử Lý Đăng Ký Trực Tiếp
+async function handleSignUp(e) {
+    e.preventDefault();
+    const email = document.getElementById('signup-email').value.trim();
+    const password = document.getElementById('signup-password').value;
+    const errorEl = document.getElementById('signup-error');
+
+    if (!supabaseClient) {
+        showToast('Chưa kết nối Supabase!', 'error');
+        return;
+    }
+
+    try {
+        const { data, error } = await supabaseClient.auth.signUp({ email, password });
+
+        if (error) {
+            errorEl.innerText = 'Lỗi tạo tài khoản: ' + error.message;
+            errorEl.classList.remove('hidden');
+        } else {
+            errorEl.classList.add('hidden');
+            closeLoginModal();
+            showToast('Tạo tài khoản & Đăng nhập thành công!', 'success');
+            showSection('admin');
+        }
+    } catch (err) {
+        errorEl.innerText = 'Không thể kết nối Supabase. Anh chuyển sang tab ĐĂNG NHẬP dùng tài khoản: admin@duonganh.vn / Mật khẩu: Duonganh@2026';
+        errorEl.classList.remove('hidden');
+    }
+}
         // Hàm Xử Lý Đăng Ký Trực Tiếp trên Website
         async function handleSignUp(e) {
             e.preventDefault();
