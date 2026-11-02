@@ -702,29 +702,30 @@
             document.getElementById('login-error').classList.add('hidden');
         }
 
-        async function handleLogin(e) {
-            e.preventDefault();
-            const email = document.getElementById('admin-email').value;
-            const password = document.getElementById('admin-password').value;
-            const errorEl = document.getElementById('login-error');
+       async function handleLogin(e) {
+    e.preventDefault();
+    const email = document.getElementById('admin-email').value.trim();
+    const password = document.getElementById('admin-password').value;
+    const errorEl = document.getElementById('login-error');
 
-            if (!supabaseClient) {
-                showToast('Chưa kết nối Supabase!', 'error');
-                return;
-            }
+    if (!supabaseClient) {
+        showToast('Chưa kết nối Supabase!', 'error');
+        return;
+    }
 
-            const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
+    const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
 
-            if (error) {
-                errorEl.innerText = 'Email hoặc mật khẩu không chính xác!';
-                errorEl.classList.remove('hidden');
-            } else {
-                errorEl.classList.add('hidden');
-                closeLoginModal();
-                showToast('Đăng nhập Quản Trị thành công!', 'success');
-                showSection('admin');
-            }
-        }
+    if (error) {
+        // Hiển thị trực tiếp thông báo lỗi thực tế từ Supabase
+        errorEl.innerText = 'Thông báo: ' + (error.message || 'Không thể đăng nhập');
+        errorEl.classList.remove('hidden');
+    } else {
+        errorEl.classList.add('hidden');
+        closeLoginModal();
+        showToast('Đăng nhập Quản Trị thành công!', 'success');
+        showSection('admin');
+    }
+}
 
         async function handleLogout() {
             if (supabaseClient) {
