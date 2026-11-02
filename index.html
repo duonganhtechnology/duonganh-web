@@ -608,36 +608,54 @@
         </div>
     </footer>
 
-    <!-- MODAL ĐĂNG NHẬP BẢO MẬT (SUPABASE AUTH) -->
-    <div id="login-modal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
-        <div class="bg-zinc-950 border border-amber-500/40 rounded-2xl p-6 sm:p-8 w-full max-w-md text-white shadow-2xl space-y-5 relative">
-            <button onclick="closeLoginModal()" class="absolute top-4 right-4 text-zinc-400 hover:text-white text-lg">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div class="text-center">
-                <div class="w-12 h-12 bg-amber-500/10 rounded-full border border-amber-500/30 flex items-center justify-center mx-auto mb-3 text-amber-400 text-xl">
-                    <i class="fa-solid fa-shield-halved"></i>
-                </div>
-                <h3 class="text-xl font-black text-gold-metallic uppercase">ĐĂNG NHẬP QUẢN TRỊ</h3>
-                <p class="text-xs text-zinc-400 mt-1">Vui lòng đăng nhập tài khoản Supabase để tiếp tục</p>
-            </div>
-            <form id="login-form" onsubmit="handleLogin(event)" class="space-y-4">
-                <div>
-                    <label class="block text-xs font-bold text-zinc-300 mb-1">Email Quản Trị</label>
-                    <input type="email" id="admin-email" required placeholder="admin@duonganh.vn" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-amber-400">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-zinc-300 mb-1">Mật Khẩu</label>
-                    <input type="password" id="admin-password" required placeholder="••••••••" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-amber-400">
-                </div>
-                <div id="login-error" class="text-red-500 text-xs hidden text-center font-semibold">Email hoặc mật khẩu không chính xác!</div>
-                <div class="flex gap-3 pt-2">
-                    <button type="button" onclick="closeLoginModal()" class="w-1/2 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 font-bold py-3 rounded-xl text-xs transition">HỦY</button>
-                    <button type="submit" class="w-1/2 bg-gold-gradient hover:opacity-90 text-black font-extrabold py-3 rounded-xl text-xs transition">ĐĂNG NHẬP</button>
-                </div>
-            </form>
+  <!-- MODAL ĐĂNG NHẬP / ĐĂNG KÝ BẢO MẬT (SUPABASE AUTH) -->
+<div id="login-modal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
+    <div class="bg-zinc-950 border border-amber-500/40 rounded-2xl p-6 sm:p-8 w-full max-w-md text-white shadow-2xl space-y-5 relative">
+        <button onclick="closeLoginModal()" class="absolute top-4 right-4 text-zinc-400 hover:text-white text-lg">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        
+        <!-- Tab chuyển đổi Đăng Nhập / Đăng Ký -->
+        <div class="flex border-b border-zinc-800 pb-2 gap-4 justify-center">
+            <button onclick="switchAuthTab('login')" id="auth-tab-login" class="text-sm font-bold text-amber-400 border-b-2 border-amber-400 pb-2">ĐĂNG NHẬP</button>
+            <button onclick="switchAuthTab('signup')" id="auth-tab-signup" class="text-sm font-bold text-zinc-400 hover:text-white pb-2">+ TẠO TÀI KHOẢN MỚI</button>
         </div>
+
+        <!-- FORM 1: ĐĂNG NHẬP -->
+        <form id="auth-form-login" onsubmit="handleLogin(event)" class="space-y-4">
+            <div>
+                <label class="block text-xs font-bold text-zinc-300 mb-1">Email Quản Trị</label>
+                <input type="email" id="admin-email" required placeholder="admin@duonganh.vn" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-amber-400">
+            </div>
+            <div>
+                <label class="block text-xs font-bold text-zinc-300 mb-1">Mật Khẩu</label>
+                <input type="password" id="admin-password" required placeholder="••••••••" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-amber-400">
+            </div>
+            <div id="login-error" class="text-red-500 text-xs hidden text-center font-semibold"></div>
+            <div class="flex gap-3 pt-2">
+                <button type="button" onclick="closeLoginModal()" class="w-1/2 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 font-bold py-3 rounded-xl text-xs transition">HỦY</button>
+                <button type="submit" class="w-1/2 bg-gold-gradient hover:opacity-90 text-black font-extrabold py-3 rounded-xl text-xs transition">ĐĂNG NHẬP</button>
+            </div>
+        </form>
+
+        <!-- FORM 2: ĐĂNG KÝ TRỰC TIẾP -->
+        <form id="auth-form-signup" onsubmit="handleSignUp(event)" class="space-y-4 hidden">
+            <div>
+                <label class="block text-xs font-bold text-zinc-300 mb-1">Tạo Email Quản Trị Mới</label>
+                <input type="email" id="signup-email" required placeholder="admin@duonganh.vn" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-amber-400">
+            </div>
+            <div>
+                <label class="block text-xs font-bold text-zinc-300 mb-1">Tạo Mật Khẩu (Ít nhất 6 ký tự)</label>
+                <input type="password" id="signup-password" required minlength="6" placeholder="••••••••" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-amber-400">
+            </div>
+            <div id="signup-error" class="text-red-500 text-xs hidden text-center font-semibold"></div>
+            <div class="flex gap-3 pt-2">
+                <button type="button" onclick="closeLoginModal()" class="w-1/2 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 font-bold py-3 rounded-xl text-xs transition">HỦY</button>
+                <button type="submit" class="w-1/2 bg-gold-gradient hover:opacity-90 text-black font-extrabold py-3 rounded-xl text-xs transition">TẠO TÀI KHOẢN</button>
+            </div>
+        </form>
     </div>
+</div>
 
     <!-- JAVASCRIPT & SUPABASE INTERACTION -->
     <script>
@@ -684,19 +702,50 @@
         };
 
         // --- SUPABASE AUTH & ADMIN ACCESS CONTROL ---
-        async function toggleAdminAccess() {
-            if (!supabaseClient) {
-                document.getElementById('login-modal').classList.remove('hidden');
-                return;
-            }
-            const { data: { session } } = await supabaseClient.auth.getSession();
-            if (session) {
-                showSection('admin');
-            } else {
-                document.getElementById('login-modal').classList.remove('hidden');
-            }
-        }
+       // Chuyển đổi qua lại giữa Tab Đăng nhập và Đăng ký
+function switchAuthTab(tab) {
+    const loginForm = document.getElementById('auth-form-login');
+    const signupForm = document.getElementById('auth-form-signup');
+    const loginTab = document.getElementById('auth-tab-login');
+    const signupTab = document.getElementById('auth-tab-signup');
 
+    if (tab === 'login') {
+        loginForm.classList.remove('hidden');
+        signupForm.classList.add('hidden');
+        loginTab.className = 'text-sm font-bold text-amber-400 border-b-2 border-amber-400 pb-2';
+        signupTab.className = 'text-sm font-bold text-zinc-400 hover:text-white pb-2';
+    } else {
+        loginForm.classList.add('hidden');
+        signupForm.classList.remove('hidden');
+        signupTab.className = 'text-sm font-bold text-amber-400 border-b-2 border-amber-400 pb-2';
+        loginTab.className = 'text-sm font-bold text-zinc-400 hover:text-white pb-2';
+    }
+}
+
+// Hàm Xử Lý Đăng Ký Trực Tiếp trên Website
+async function handleSignUp(e) {
+    e.preventDefault();
+    const email = document.getElementById('signup-email').value.trim();
+    const password = document.getElementById('signup-password').value;
+    const errorEl = document.getElementById('signup-error');
+
+    if (!supabaseClient) {
+        showToast('Chưa kết nối Supabase!', 'error');
+        return;
+    }
+
+    const { data, error } = await supabaseClient.auth.signUp({ email, password });
+
+    if (error) {
+        errorEl.innerText = 'Lỗi tạo tài khoản: ' + error.message;
+        errorEl.classList.remove('hidden');
+    } else {
+        errorEl.classList.add('hidden');
+        closeLoginModal();
+        showToast('Tạo tài khoản thành công! Đang chuyển vào Bảng Quản Trị...', 'success');
+        showSection('admin');
+    }
+}
         function closeLoginModal() {
             document.getElementById('login-modal').classList.add('hidden');
             document.getElementById('login-error').classList.add('hidden');
