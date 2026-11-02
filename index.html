@@ -203,40 +203,67 @@
             <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8"></div>
         </section>
 
-        <!-- SECTION 2: TÌM XE VẬN CHUYỂN -->
-        <section id="sec-vehicles" class="page-section hidden py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-zinc-950 p-6 rounded-2xl border border-amber-500/30 mb-8">
-                <h2 class="text-2xl font-black text-white uppercase">DANH BẠ XE VẬN CHUYỂN MÁY MÓC</h2>
-                <p class="text-xs text-zinc-400 mb-6 mt-1">Tìm nhanh xe cẩu tự hành, rơ-moóc chở máy nặng tại các địa phương.</p>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    <div>
-                        <label class="block text-xs text-zinc-400 mb-1">Chọn Tỉnh / Thành</label>
-                        <select id="filter-veh-province" onchange="renderVehicles()" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2.5 text-sm text-zinc-200">
-                            <option value="">-- Tất cả tỉnh thành --</option>
-                            <option value="Đồng Nai">Đồng Nai</option>
-                            <option value="TP. Hồ Chí Minh">TP. Hồ Chí Minh</option>
-                            <option value="Bình Dương">Bình Dương</option>
-                            <option value="Long An">Long An</option>
-                            <option value="Hà Nội">Hà Nội</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs text-zinc-400 mb-1">Loại Xe</label>
-                        <select id="filter-veh-type" onchange="renderVehicles()" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2.5 text-sm text-zinc-200">
-                            <option value="">-- Tất cả loại xe --</option>
-                            <option value="Xe cẩu tự hành">Xe Cẩu Tự Hành</option>
-                            <option value="Rơ-moóc sàn thấp">Rơ-moóc Sàn Thấp</option>
-                            <option value="Xe tải thùng">Xe Tải Thùng</option>
-                        </select>
-                    </div>
-                    <div class="flex items-end">
-                        <button onclick="resetVehFilter()" class="w-full bg-zinc-800 hover:bg-zinc-700 text-zinc-200 py-2.5 rounded-lg text-xs font-bold border border-zinc-700">Xóa Bộ Lọc</button>
-                    </div>
-                </div>
-            </div>
-            <div id="vehicles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-        </section>
+<!-- SECTIONS: DÂY CHUYỂN SẢN XUẤT -->
+<section id="day-chuyen-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <div class="text-center mb-12">
+    <h2 class="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight">
+      DÂY CHUYỂN SẢN XUẤT TỰ ĐỘNG DƯƠNG ANH
+    </h2>
+    <p class="text-zinc-400 text-sm mt-2 max-w-2xl mx-auto">
+      Giải pháp đồng bộ toàn diện từ khâu sơ chế, định lượng đến đóng gói thành phẩm cho nhà xưởng.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- 1. CHẢ LỤA & GIÒ CHẢ -->
+    <div class="bg-zinc-900/80 border border-amber-500/30 rounded-2xl p-6 hover:border-amber-400 transition group">
+      <div class="text-3xl mb-3">🥩</div>
+      <h3 class="text-lg font-bold text-white mb-2">Dây Chuyền Chả Lụa & Giò Chả</h3>
+      <p class="text-xs text-zinc-400 mb-4 leading-relaxed">Máy xay thịt cao tốc ➔ Máy định lượng giò chả ➔ Tủ hấp công nghiệp ➔ Máy đóng gói chân không.</p>
+      <span class="text-amber-400 text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition">Tư vấn cấu hình ➔</span>
+    </div>
+
+    <!-- 2. BÒ VIÊN & CÁ VIÊN -->
+    <div class="bg-zinc-900/80 border border-amber-500/30 rounded-2xl p-6 hover:border-amber-400 transition group">
+      <div class="text-3xl mb-3">🧆</div>
+      <h3 class="text-lg font-bold text-white mb-2">Dây Chuyền Bò Viên & Cá Viên</h3>
+      <p class="text-xs text-zinc-400 mb-4 leading-relaxed">Máy quết chả ➔ Mô-đun tạo viên tự động ➔ Nồi luộc định hình ➔ Băng tải làm mát.</p>
+      <span class="text-amber-400 text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition">Tư vấn cấu hình ➔</span>
+    </div>
+
+    <!-- 3. XÚC XÍCH & LẠP XƯỞNG -->
+    <div class="bg-zinc-900/80 border border-amber-500/30 rounded-2xl p-6 hover:border-amber-400 transition group">
+      <div class="text-3xl mb-3">🌭</div>
+      <h3 class="text-lg font-bold text-white mb-2">Dây Chuyền Xúc Xích & Lạp Xưởng</h3>
+      <p class="text-xs text-zinc-400 mb-4 leading-relaxed">Máy nhồi nén Piston ➔ Mô-đun xoắn vặn ➔ Tủ sấy / xông khói ➔ Đóng gói tự động.</p>
+      <span class="text-amber-400 text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition">Tư vấn cấu hình ➔</span>
+    </div>
+
+    <!-- 4. CHẢ CÁ -->
+    <div class="bg-zinc-900/80 border border-amber-500/30 rounded-2xl p-6 hover:border-amber-400 transition group">
+      <div class="text-3xl mb-3">🐟</div>
+      <h3 class="text-lg font-bold text-white mb-2">Dây Chuyền Chả Cá</h3>
+      <p class="text-xs text-zinc-400 mb-4 leading-relaxed">Máy lọc xương cá ➔ Máy quết dai ➔ Máy định hình bánh/viên ➔ Băng tải chiên tự động.</p>
+      <span class="text-amber-400 text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition">Tư vấn cấu hình ➔</span>
+    </div>
+
+    <!-- 5. BÚN & PHỞ TƯƠI -->
+    <div class="bg-zinc-900/80 border border-amber-500/30 rounded-2xl p-6 hover:border-amber-400 transition group">
+      <div class="text-3xl mb-3">🍜</div>
+      <h3 class="text-lg font-bold text-white mb-2">Dây Chuyền Bún & Phở Tươi</h3>
+      <p class="text-xs text-zinc-400 mb-4 leading-relaxed">Hệ thống trộn bột ➔ Máy ép đùn/tráng bánh ➔ Buồng hấp chín ➔ Máy cắt sợi tự động.</p>
+      <span class="text-amber-400 text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition">Tư vấn cấu hình ➔</span>
+    </div>
+
+    <!-- 6. THIẾT KẾ THEO YÊU CẦU -->
+    <div class="bg-zinc-900/80 border border-amber-500/30 rounded-2xl p-6 hover:border-amber-400 transition group">
+      <div class="text-3xl mb-3">⚙️</div>
+      <h3 class="text-lg font-bold text-white mb-2">Dây Chuyền Theo Yêu Cầu</h3>
+      <p class="text-xs text-zinc-400 mb-4 leading-relaxed">Tư vấn và thiết kế dây chuyền công nghiệp riêng biệt theo công suất & mặt bằng nhà xưởng.</p>
+      <span class="text-amber-400 text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition">Liên hệ Kỹ sư Dương Anh ➔</span>
+    </div>
+  </div>
+</section>
 
         <!-- SECTION 3: TÌM THỢ KỸ THUẬT -->
         <section id="sec-technicians" class="page-section hidden py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
