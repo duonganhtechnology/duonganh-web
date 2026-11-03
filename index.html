@@ -187,22 +187,102 @@
             
         </section>
 
-        <!-- SECTION 1: SẢN PHẨM MÁY MÓC -->
-        <section id="sec-products" class="page-section hidden py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-zinc-800 gap-4">
-                <div>
-                    <h2 class="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight">SẢN PHẨM MÁY MÓC DƯƠNG ANH</h2>
-                    <p class="text-xs text-zinc-400 mt-1">Các dòng thiết bị tự động hóa chế biến thực phẩm được nghiên cứu chế tạo chính hãng.</p>
-                </div>
-                <div class="flex gap-2 overflow-x-auto pb-2 md:pb-0">
-                    <button onclick="filterProducts('all')" class="prod-cat-btn px-4 py-2 bg-gold-gradient text-black rounded-lg text-xs font-extrabold">Tất Cả</button>
-                    <button onclick="filterProducts('Máy giò chả')" class="prod-cat-btn px-4 py-2 bg-zinc-900 border border-zinc-800 hover:border-amber-500/40 text-zinc-300 rounded-lg text-xs font-bold">Máy Định Lượng Giò Chả</button>
-                    <button onclick="filterProducts('Dây chuyền')" class="prod-cat-btn px-4 py-2 bg-zinc-900 border border-zinc-800 hover:border-amber-500/40 text-zinc-300 rounded-lg text-xs font-bold">Dây Chuyền Tự Động</button>
-                </div>
-            </div>
-            <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8"></div>
-        </section>
+     <!-- KHU VỰC SẢN PHẨM MÁY MÓC -->
+<section id="san-pham-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  
+  <!-- TIÊU ĐỀ NỔI BẬT -->
+  <div class="text-center mb-12">
+    <span class="text-amber-400 font-extrabold text-xs tracking-widest uppercase bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
+      CÔNG NGHỆ ĐỘC QUYỀN DƯƠNG ANH
+    </span>
+    <h2 class="text-3xl sm:text-4xl font-black text-white mt-3 uppercase tracking-tight">
+      MÁY ĐỊNH LƯỢNG GIÒ CHẢ & HỆ SINH THÁI MỞ RỘNG
+    </h2>
+    <p class="text-zinc-400 text-sm mt-2 max-w-2xl mx-auto">
+      Một thiết bị trung tâm - Tích hợp linh hoạt nhiều mô-đun chức năng cho nhà xưởng thực phẩm.
+    </p>
+  </div>
 
+  <!-- PHẦN 1: MÁY ĐỊNH LƯỢNG CỐT LÕI (SẢN PHẨM CHÍNH) -->
+  <div class="mb-16">
+    <div class="bg-gradient-to-br from-zinc-900 via-zinc-950 to-zinc-900 border-2 border-amber-500/40 rounded-3xl p-6 lg:p-8 shadow-2xl relative overflow-hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Ảnh Máy Chính -->
+        <div class="lg:col-span-5 rounded-2xl overflow-hidden border border-amber-500/30 relative">
+          <span class="absolute top-3 left-3 bg-amber-400 text-black font-black text-xs px-3 py-1 rounded shadow-md uppercase">
+            ⭐ SẢN PHẨM CỐT LÕI
+          </span>
+          <img src="banner-may-dinh-luong.jpg" alt="Máy Định Lượng Giò Chả Tự Động Dương Anh" class="w-full h-auto object-cover">
+        </div>
+
+        <!-- Thông Tin Máy Chính -->
+        <div class="lg:col-span-7 space-y-4">
+          <h3 class="text-2xl sm:text-3xl font-black text-white">
+            Máy Định Lượng Giò Chả Tự Động Dương Anh
+          </h3>
+          <p class="text-zinc-300 text-sm leading-relaxed">
+            Giải pháp định lượng Piston khí nén / Cánh chia chuyên dụng cho giò chả, chả cá, xúc xích. Định lượng chuẩn xác từng gram, tốc độ cao, chất liệu Inox 304 đạt chuẩn ATVSTP.
+          </p>
+          
+          <!-- Thông số nhanh -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+            <div class="bg-zinc-900/90 border border-zinc-800 p-3 rounded-xl text-center">
+              <span class="text-xs text-zinc-400 block">Năng Suất</span>
+              <span class="text-sm font-bold text-amber-400">300 - 500 kg/h</span>
+            </div>
+            <div class="bg-zinc-900/90 border border-zinc-800 p-3 rounded-xl text-center">
+              <span class="text-xs text-zinc-400 block">Chất Liệu</span>
+              <span class="text-sm font-bold text-amber-400">Inox 304 Cao Cấp</span>
+            </div>
+            <div class="bg-zinc-900/90 border border-zinc-800 p-3 rounded-xl text-center col-span-2 sm:col-span-1">
+              <span class="text-xs text-zinc-400 block">Điều Khiển</span>
+              <span class="text-sm font-bold text-amber-400">Tủ Màn Hình PLC</span>
+            </div>
+          </div>
+
+          <div class="pt-4 flex flex-wrap gap-4">
+            <a href="https://zalo.me" target="_blank" class="px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-500 text-black font-extrabold text-sm transition shadow-lg flex items-center gap-2">
+              💬 NHẬN BÁO GIÁ ZALO
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- PHẦN 2: CÁC MÔ-ĐUN MỞ RỘNG (TƯƠNG LAI/NÂNG CẤP) -->
+  <div class="mb-12">
+    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+      <span class="text-amber-400">🧩</span> MÔ-ĐUN CHỨC NĂNG MỞ RỘNG (GẮN THÊM CHO MÁY ĐỊNH LƯỢNG)
+    </h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Mô-đun 1 -->
+      <div class="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 hover:border-amber-500/50 transition">
+        <div class="text-amber-400 font-extrabold text-xs mb-1">MÔ-ĐUN 01</div>
+        <h4 class="text-lg font-bold text-white mb-2">Mô-Đun Xoắn Vặn Xúc Xích</h4>
+        <p class="text-xs text-zinc-400">Kết nối trực tiếp đầu ra máy định lượng để tự động đùn và xoắn buộc chỉ xúc xích, lạp xưởng.</p>
+      </div>
+
+      <!-- Mô-đun 2 -->
+      <div class="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 hover:border-amber-500/50 transition">
+        <div class="text-amber-400 font-extrabold text-xs mb-1">MÔ-ĐUN 02</div>
+        <h4 class="text-lg font-bold text-white mb-2">Mô-Đun Tạo Viên Tự Động</h4>
+        <p class="text-xs text-zinc-400">Gắn bộ cắt viên giúp định hình bò viên, cá viên, mộc viên tròn đều với tốc độ cao.</p>
+      </div>
+
+      <!-- Mô-đun 3 -->
+      <div class="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 hover:border-amber-500/50 transition">
+        <div class="text-amber-400 font-extrabold text-xs mb-1">MÔ-ĐUN 03</div>
+        <h4 class="text-lg font-bold text-white mb-2">Mô-Đun Đóng Gói Tự Động</h4>
+        <p class="text-xs text-zinc-400">Tích hợp băng tải và đầu rót vào bao bì/khay tự động, giảm bớt nhân công đứng máy.</p>
+      </div>
+    </div>
+  </div>
+
+</section>
 <!-- SECTIONS: DÂY CHUYỂN SẢN XUẤT -->
 <section id="day-chuyen-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
   <div class="text-center mb-12">
