@@ -748,7 +748,7 @@
                             <h3 class="font-bold text-white text-base mt-1 leading-snug">${post.title}</h3>
                             <p class="text-xs text-zinc-400 mt-2 leading-relaxed line-clamp-3">${post.summary || ''}</p>
                         </div>
-                        <button onclick="showToast('Bài viết chi tiết đang cập nhật!', 'info')" class="text-left text-xs font-bold text-amber-400 hover:underline pt-2">Đọc tiếp bài viết →</button>
+                        <button onclick="showToast('${post.content || 'Nội dung chi tiết đang cập nhật!'}', 'info')" class="text-left text-xs font-bold text-amber-400 hover:underline pt-2">Đọc tiếp bài viết →</button>
                     </div>
                 `).join('');
             }
