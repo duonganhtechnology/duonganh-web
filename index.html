@@ -733,6 +733,8 @@
                 try {
                     let { data, error } = await supabaseClient.from('products').select('*');
                    if (!error & data & data.length > 0) items = data;
+                    console.log("Dữ liệu lấy từ Supabase:", data);
+console.log("Lỗi nếu có:", error);
                 } catch(e) {}
             }
             if (items.length === 0) items = sampleData.products;
