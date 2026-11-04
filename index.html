@@ -86,29 +86,28 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-24">
                 
-<!-- BRAND LOGO -->
-<div class="flex items-center cursor-pointer py-1" onclick="showSection('home')">
-    <img src="./logo.jpg" alt="Dương Anh Technology" class="h-16 sm:h-20 w-auto object-contain transition hover:scale-105">
-</div>
-</div>
-
-                <!-- DESKTOP NAVIGATION -->
-                <nav class="hidden lg:flex items-center gap-1 xl:gap-2">
-                    <button onclick="showSection('home')" class="nav-btn px-3 py-2 rounded-lg text-xs font-bold text-zinc-300 hover:text-gold-400 hover:bg-zinc-900 transition">TRANG CHỦ</button>
-                    <button onclick="showSection('products')" class="nav-btn px-3 py-2 rounded-lg text-xs font-bold text-zinc-300 hover:text-gold-400 hover:bg-zinc-900 transition">SẢN PHẨM MÁY MÓC</button>
-                    <button onclick="showSection('posts')" class="nav-btn px-3 py-2 rounded-lg text-xs font-bold text-zinc-300 hover:text-gold-400 hover:bg-zinc-900 transition">TIN TỨC</button>
-                </nav>
-
-                <!-- ADMIN BUTTON (GẮN KHÓA XÁC THỰC) & MOBILE TRIGGER -->
-                <div class="flex items-center gap-3">
-                    <button onclick="toggleAdminAccess()" class="px-4 py-2.5 bg-gold-gradient hover:opacity-90 text-black font-extrabold text-xs rounded-xl shadow-gold-glow transition flex items-center gap-2">
-                        <i class="fa-solid fa-lock"></i>
-                        <span>QUẢN TRỊ</span>
-                    </button>
-                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden text-zinc-300 hover:text-amber-400 p-2">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
+                <!-- BRAND LOGO -->
+                <div class="flex items-center cursor-pointer py-1" onclick="showSection('home')">
+                    <img src="./logo.jpg" alt="Dương Anh Technology" class="h-16 sm:h-20 w-auto object-contain transition hover:scale-105">
                 </div>
+            </div>
+
+            <!-- DESKTOP NAVIGATION -->
+            <nav class="hidden lg:flex items-center gap-1 xl:gap-2">
+                <button onclick="showSection('home')" class="nav-btn px-3 py-2 rounded-lg text-xs font-bold text-zinc-300 hover:text-gold-400 hover:bg-zinc-900 transition">TRANG CHỦ</button>
+                <button onclick="showSection('products')" class="nav-btn px-3 py-2 rounded-lg text-xs font-bold text-zinc-300 hover:text-gold-400 hover:bg-zinc-900 transition">SẢN PHẨM MÁY MÓC</button>
+                <button onclick="showSection('posts')" class="nav-btn px-3 py-2 rounded-lg text-xs font-bold text-zinc-300 hover:text-gold-400 hover:bg-zinc-900 transition">TIN TỨC</button>
+            </nav>
+
+            <!-- ADMIN BUTTON (GẮN KHÓA XÁC THỰC) & MOBILE TRIGGER -->
+            <div class="flex items-center gap-3">
+                <button onclick="toggleAdminAccess()" class="px-4 py-2.5 bg-gold-gradient hover:opacity-90 text-black font-extrabold text-xs rounded-xl shadow-gold-glow transition flex items-center gap-2">
+                    <i class="fa-solid fa-lock"></i>
+                    <span>QUẢN TRỊ</span>
+                </button>
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden text-zinc-300 hover:text-amber-400 p-2">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
             </div>
         </div>
 
@@ -150,10 +149,11 @@
                                 <button onclick="showSection('products')" class="px-7 py-3.5 bg-gold-gradient hover:opacity-95 text-black font-extrabold text-sm rounded-xl shadow-gold-glow transition flex items-center gap-2">
                                     <span>XEM MÁY MÓC CHẾ TẠO</span>
                                     <i class="fa-solid fa-arrow-right"></i>
+                                </button>
                                 <button onclick="document.getElementById('day-chuyen-section').scrollIntoView({behavior: 'smooth'})" class="px-6 py-3.5 rounded-xl border border-amber-500/40 bg-zinc-900/80 hover:bg-amber-500/10 text-amber-400 font-bold text-sm transition flex items-center justify-center gap-2">
-    <i class="fa-solid fa-layer-group"></i>
-    <span>DÂY CHUYỂN SẢN XUẤT</span>
-</button>
+                                    <i class="fa-solid fa-layer-group"></i>
+                                    <span>DÂY CHUYỂN SẢN XUẤT</span>
+                                </button>
                             </div>
                         </div>
 
@@ -161,189 +161,188 @@
                             <div class="relative mx-auto max-w-md lg:max-w-none">
                                 <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-amber-500 to-yellow-600 opacity-30 blur-xl"></div>
                                <div class="relative bg-zinc-950 border border-amber-500/40 rounded-2xl p-6 shadow-2xl space-y-4">
-            <!-- ẢNH SẢN PHẨM (ĐÃ BỎ NHÃN ĐÈ NÊN HÌNH TRONG SẠCH) -->
-            <div class="overflow-hidden rounded-xl border border-zinc-800">
-              <img src="Designer (1).png" alt="Máy Định Lượng Giò Chả Tự Động" class="w-full h-auto object-cover">
-            </div>
+                                    <!-- ẢNH SẢN PHẨM (ĐÃ BỎ NHÃN ĐÈ NÊN HÌNH TRONG SẠCH) -->
+                                    <div class="overflow-hidden rounded-xl border border-zinc-800">
+                                      <img src="Designer (1).png" alt="Máy Định Lượng Giò Chả Tự Động" class="w-full h-auto object-cover">
+                                    </div>
 
-            <!-- THÔNG TIN VÀ NHÃN NẰM BÊN NGOÀI ẢNH -->
-            <div>
-              <span class="inline-block bg-amber-400 text-black font-extrabold text-[10px] px-2.5 py-1 rounded shadow uppercase tracking-wider mb-2">⭐ SẢN PHẨM CHỦ LỰC</span>
-              <h3 class="text-xl font-black text-white">Máy Định Lượng Giò Chả Tự Động</h3>
-              <p class="text-xs text-zinc-400 mt-2 leading-relaxed">Công nghệ định lượng cánh chia với độ bền cánh bảo hành vĩnh viễn.</p>
-            </div>
+                                    <!-- THÔNG TIN VÀ NHÃN NẰM BÊN NGOÀI ẢNH -->
+                                    <div>
+                                      <span class="inline-block bg-amber-400 text-black font-extrabold text-[10px] px-2.5 py-1 rounded shadow uppercase tracking-wider mb-2">⭐ SẢN PHẨM CHỦ LỰC</span>
+                                      <h3 class="text-xl font-black text-white">Máy Định Lượng Giò Chả Tự Động</h3>
+                                      <p class="text-xs text-zinc-400 mt-2 leading-relaxed">Công nghệ định lượng cánh chia với độ bền cánh bảo hành vĩnh viễn.</p>
+                                    </div>
 
-            <div class="pt-3 border-t border-zinc-800 flex justify-between items-center text-xs text-zinc-300">
-              <span><i class="fa-solid fa-shield-check text-amber-400 mr-1.5"></i> Bảo Hành 12 Tháng</span>
-              <span><i class="fa-solid fa-microchip text-amber-400 mr-1.5"></i> Điều Khiển PLC</span>
-            </div>
-          </div>
+                                    <div class="pt-3 border-t border-zinc-800 flex justify-between items-center text-xs text-zinc-300">
+                                      <span><i class="fa-solid fa-shield-check text-amber-400 mr-1.5"></i> Bảo Hành 12 Tháng</span>
+                                      <span><i class="fa-solid fa-microchip text-amber-400 mr-1.5"></i> Điều Khiển PLC</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            
         </section>
 
-     <!-- KHU VỰC SẢN PHẨM MÁY MÓC -->
-<section id="san-pham-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-  
-  <!-- TIÊU ĐỀ NỔI BẬT -->
-  <div class="text-center mb-12">
-    <span class="text-amber-400 font-extrabold text-xs tracking-widest uppercase bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
-      CÔNG NGHỆ ĐỘC QUYỀN DƯƠNG ANH
-    </span>
-    <h2 class="text-3xl sm:text-4xl font-black text-white mt-3 uppercase tracking-tight">
-      MÁY ĐỊNH LƯỢNG GIÒ CHẢ & HỆ SINH THÁI MỞ RỘNG
-    </h2>
-    <p class="text-zinc-400 text-sm mt-2 max-w-2xl mx-auto">
-      Một thiết bị trung tâm - Tích hợp linh hoạt nhiều mô-đun chức năng cho nhà xưởng thực phẩm.
-    </p>
-  </div>
-
- <!-- PHẦN 1: MÁY ĐỊNH LƯỢNG CỐT LÕI (SẢN PHẨM CHÍNH) -->
-  <div class="mb-16">
-    <div class="bg-gradient-to-br from-zinc-900 via-zinc-950 to-zinc-900 border-2 border-amber-500/40 rounded-3xl p-6 lg:p-8 shadow-2xl relative overflow-hidden">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        
-        <!-- Ảnh Máy Chính (Đã bỏ nhãn đè - Hình ảnh trong sạch) -->
-        <div class="lg:col-span-5 rounded-2xl overflow-hidden border border-amber-500/30">
-          <img src="may-dinh-luong-cha-lua.png" alt="Máy Định Lượng Giò Chả Tự Động Dương Anh" class="w-full h-auto object-cover">
-        </div>
-
-        <!-- Thông Tin Máy Chính (Nhãn Sản Phẩm Cốt Lõi chuyển sang bên ngoài ảnh) -->
-        <div class="lg:col-span-7 space-y-4">
-          <span class="inline-block bg-amber-400 text-black font-extrabold text-xs px-3 py-1 rounded shadow-md uppercase tracking-wider">
-            ⭐ SẢN PHẨM CỐT LÕI
-          </span>
-          <h3 class="text-2xl sm:text-3xl font-black text-white">
-            Máy Định Lượng Giò Chả Tự Động Dương Anh
-          </h3>
-          <p class="text-zinc-300 text-sm leading-relaxed">
-            Giải pháp định lượng Piston khí nén / Cánh chia chuyên dụng cho giò chả, chả cá, xúc xích. Định lượng chuẩn xác từng gram, tốc độ cao, chất liệu Inox 304 đạt chuẩn ATVSTP.
-          </p>
+        <!-- KHU VỰC SẢN PHẨM MÁY MÓC -->
+        <section id="san-pham-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           
-          <!-- Thông số nhanh -->
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
-            <div class="bg-zinc-900/90 border border-zinc-800 p-3 rounded-xl text-center">
-              <span class="text-xs text-zinc-400 block">Năng Suất</span>
-              <span class="text-sm font-bold text-amber-400">300 - 500 kg/h</span>
-            </div>
-            <div class="bg-zinc-900/90 border border-zinc-800 p-3 rounded-xl text-center">
-              <span class="text-xs text-zinc-400 block">Chất Liệu</span>
-              <span class="text-sm font-bold text-amber-400">Inox 304 Cao Cấp</span>
-            </div>
-            <div class="bg-zinc-900/90 border border-zinc-800 p-3 rounded-xl text-center col-span-2 sm:col-span-1">
-              <span class="text-xs text-zinc-400 block">Điều Khiển</span>
-              <span class="text-sm font-bold text-amber-400">Tủ Màn Hình PLC</span>
+          <!-- TIÊU ĐỀ NỔI BẬT -->
+          <div class="text-center mb-12">
+            <span class="text-amber-400 font-extrabold text-xs tracking-widest uppercase bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
+              CÔNG NGHỆ ĐỘC QUYỀN DƯƠNG ANH
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-black text-white mt-3 uppercase tracking-tight">
+              MÁY ĐỊNH LƯỢNG GIÒ CHẢ & HỆ SINH THÁI MỞ RỘNG
+            </h2>
+            <p class="text-zinc-400 text-sm mt-2 max-w-2xl mx-auto">
+              Một thiết bị trung tâm - Tích hợp linh hoạt nhiều mô-đun chức năng cho nhà xưởng thực phẩm.
+            </p>
+          </div>
+
+         <!-- PHẦN 1: MÁY ĐỊNH LƯỢNG CỐT LÕI (SẢN PHẨM CHÍNH) -->
+          <div class="mb-16">
+            <div class="bg-gradient-to-br from-zinc-900 via-zinc-950 to-zinc-900 border-2 border-amber-500/40 rounded-3xl p-6 lg:p-8 shadow-2xl relative overflow-hidden">
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Ảnh Máy Chính (Đã bỏ nhãn đè - Hình ảnh trong sạch) -->
+                <div class="lg:col-span-5 rounded-2xl overflow-hidden border border-amber-500/30">
+                  <img src="may-dinh-luong-cha-lua.png" alt="Máy Định Lượng Giò Chả Tự Động Dương Anh" class="w-full h-auto object-cover">
+                </div>
+
+                <!-- Thông Tin Máy Chính (Nhãn Sản Phẩm Cốt Lõi chuyển sang bên ngoài ảnh) -->
+                <div class="lg:col-span-7 space-y-4">
+                  <span class="inline-block bg-amber-400 text-black font-extrabold text-xs px-3 py-1 rounded shadow-md uppercase tracking-wider">
+                    ⭐ SẢN PHẨM CỐT LÕI
+                  </span>
+                  <h3 class="text-2xl sm:text-3xl font-black text-white">
+                    Máy Định Lượng Giò Chả Tự Động Dương Anh
+                  </h3>
+                  <p class="text-zinc-300 text-sm leading-relaxed">
+                    Giải pháp định lượng Piston khí nén / Cánh chia chuyên dụng cho giò chả, chả cá, xúc xích. Định lượng chuẩn xác từng gram, tốc độ cao, chất liệu Inox 304 đạt chuẩn ATVSTP.
+                  </p>
+                  
+                  <!-- Thông số nhanh -->
+                  <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+                    <div class="bg-zinc-900/90 border border-zinc-800 p-3 rounded-xl text-center">
+                      <span class="text-xs text-zinc-400 block">Năng Suất</span>
+                      <span class="text-sm font-bold text-amber-400">300 - 500 kg/h</span>
+                    </div>
+                    <div class="bg-zinc-900/90 border border-zinc-800 p-3 rounded-xl text-center">
+                      <span class="text-xs text-zinc-400 block">Chất Liệu</span>
+                      <span class="text-sm font-bold text-amber-400">Inox 304 Cao Cấp</span>
+                    </div>
+                    <div class="bg-zinc-900/90 border border-zinc-800 p-3 rounded-xl text-center col-span-2 sm:col-span-1">
+                      <span class="text-xs text-zinc-400 block">Điều Khiển</span>
+                      <span class="text-sm font-bold text-amber-400">Tủ Màn Hình PLC</span>
+                    </div>
+                  </div>
+
+                  <div class="pt-4 flex flex-wrap gap-4">
+                    <a href="https://zalo.me/0977962912" target="_blank" class="px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-500 text-black font-extrabold text-sm transition shadow-lg flex items-center gap-2">
+                      💬 NHẬN BÁO GIÁ ZALO
+                    </a>
+                  </div>
+                </div>
+
+              </div>
             </div>
           </div>
 
-          <div class="pt-4 flex flex-wrap gap-4">
-            <a href="https://zalo.me/0977962912" target="_blank" class="px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-500 text-black font-extrabold text-sm transition shadow-lg flex items-center gap-2">
-  💬 NHẬN BÁO GIÁ ZALO
-</a>
+          <!-- PHẦN 2: CÁC MÔ-ĐUN MỞ RỘNG (TƯƠNG LAI/NÂNG CẤP) -->
+          <div class="mb-12">
+            <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+              <span class="text-amber-400">🧩</span> MÔ-ĐUN CHỨC NĂNG MỞ RỘNG (GẮN THÊM CHO MÁY ĐỊNH LƯỢNG)
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <!-- Mô-đun 1 -->
+              <div class="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 hover:border-amber-500/50 transition">
+                <div class="text-amber-400 font-extrabold text-xs mb-1">MÔ-ĐUN 01</div>
+                <h4 class="text-lg font-bold text-white mb-2">Mô-Đun Xoắn Vặn Xúc Xích</h4>
+                <p class="text-xs text-zinc-400">Kết nối trực tiếp đầu ra máy định lượng để tự động đùn và xoắn buộc chỉ xúc xích, lạp xưởng.</p>
+              </div>
+
+              <!-- Mô-đun 2 -->
+              <div class="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 hover:border-amber-500/50 transition">
+                <div class="text-amber-400 font-extrabold text-xs mb-1">MÔ-ĐUN 02</div>
+                <h4 class="text-lg font-bold text-white mb-2">Mô-Đun Tạo Viên Tự Động</h4>
+                <p class="text-xs text-zinc-400">Gắn bộ cắt viên giúp định hình bò viên, cá viên, mộc viên tròn đều với tốc độ cao.</p>
+              </div>
+
+              <!-- Mô-đun 3 -->
+              <div class="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 hover:border-amber-500/50 transition">
+                <div class="text-amber-400 font-extrabold text-xs mb-1">MÔ-ĐUN 03</div>
+                <h4 class="text-lg font-bold text-white mb-2">Mô-Đun Đóng Gói Tự Động</h4>
+                <p class="text-xs text-zinc-400">Tích hợp băng tải và đầu rót vào bao bì/khay tự động, giảm bớt nhân công đứng máy.</p>
+              </div>
+            </div>
           </div>
-        </div>
 
-      </div>
-    </div>
-  </div>
+        </section>
 
-  <!-- PHẦN 2: CÁC MÔ-ĐUN MỞ RỘNG (TƯƠNG LAI/NÂNG CẤP) -->
-  <div class="mb-12">
-    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
-      <span class="text-amber-400">🧩</span> MÔ-ĐUN CHỨC NĂNG MỞ RỘNG (GẮN THÊM CHO MÁY ĐỊNH LƯỢNG)
-    </h3>
+        <!-- SECTIONS: DÂY CHUYỂN SẢN XUẤT -->
+        <section id="day-chuyen-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div class="text-center mb-12">
+            <h2 class="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight">
+              DÂY CHUYỂN SẢN XUẤT TỰ ĐỘNG DƯƠNG ANH
+            </h2>
+            <p class="text-zinc-400 text-sm mt-2 max-w-2xl mx-auto">
+              Giải pháp đồng bộ toàn diện từ khâu sơ chế, định lượng đến đóng gói thành phẩm cho nhà xưởng.
+            </p>
+          </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <!-- Mô-đun 1 -->
-      <div class="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 hover:border-amber-500/50 transition">
-        <div class="text-amber-400 font-extrabold text-xs mb-1">MÔ-ĐUN 01</div>
-        <h4 class="text-lg font-bold text-white mb-2">Mô-Đun Xoắn Vặn Xúc Xích</h4>
-        <p class="text-xs text-zinc-400">Kết nối trực tiếp đầu ra máy định lượng để tự động đùn và xoắn buộc chỉ xúc xích, lạp xưởng.</p>
-      </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- 1. CHẢ LỤA & GIÒ CHẢ -->
+            <div class="bg-zinc-900/80 border border-amber-500/30 rounded-2xl p-6 hover:border-amber-400 transition group">
+              <div class="text-3xl mb-3">🥩</div>
+              <h3 class="text-lg font-bold text-white mb-2">Dây Chuyền Chả Lụa & Giò Chả</h3>
+              <p class="text-xs text-zinc-400 mb-4 leading-relaxed">Máy xay thịt cao tốc ➔ Máy định lượng giò chả ➔ Tủ hấp công nghiệp ➔ Máy đóng gói chân không.</p>
+              <span class="text-amber-400 text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition">Tư vấn cấu hình ➔</span>
+            </div>
 
-      <!-- Mô-đun 2 -->
-      <div class="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 hover:border-amber-500/50 transition">
-        <div class="text-amber-400 font-extrabold text-xs mb-1">MÔ-ĐUN 02</div>
-        <h4 class="text-lg font-bold text-white mb-2">Mô-Đun Tạo Viên Tự Động</h4>
-        <p class="text-xs text-zinc-400">Gắn bộ cắt viên giúp định hình bò viên, cá viên, mộc viên tròn đều với tốc độ cao.</p>
-      </div>
+            <!-- 2. BÒ VIÊN & CÁ VIÊN -->
+            <div class="bg-zinc-900/80 border border-amber-500/30 rounded-2xl p-6 hover:border-amber-400 transition group">
+              <div class="text-3xl mb-3">🧆</div>
+              <h3 class="text-lg font-bold text-white mb-2">Dây Chuyền Bò Viên & Cá Viên</h3>
+              <p class="text-xs text-zinc-400 mb-4 leading-relaxed">Máy quết chả ➔ Mô-đun tạo viên tự động ➔ Nồi luộc định hình ➔ Băng tải làm mát.</p>
+              <span class="text-amber-400 text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition">Tư vấn cấu hình ➔</span>
+            </div>
 
-      <!-- Mô-đun 3 -->
-      <div class="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 hover:border-amber-500/50 transition">
-        <div class="text-amber-400 font-extrabold text-xs mb-1">MÔ-ĐUN 03</div>
-        <h4 class="text-lg font-bold text-white mb-2">Mô-Đun Đóng Gói Tự Động</h4>
-        <p class="text-xs text-zinc-400">Tích hợp băng tải và đầu rót vào bao bì/khay tự động, giảm bớt nhân công đứng máy.</p>
-      </div>
-    </div>
-  </div>
+            <!-- 3. XÚC XÍCH & LẠP XƯỞNG -->
+            <div class="bg-zinc-900/80 border border-amber-500/30 rounded-2xl p-6 hover:border-amber-400 transition group">
+              <div class="text-3xl mb-3">🌭</div>
+              <h3 class="text-lg font-bold text-white mb-2">Dây Chuyền Xúc Xích & Lạp Xưởng</h3>
+              <p class="text-xs text-zinc-400 mb-4 leading-relaxed">Máy nhồi nén Piston ➔ Mô-đun xoắn vặn ➔ Tủ sấy / xông khói ➔ Đóng gói tự động.</p>
+              <span class="text-amber-400 text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition">Tư vấn cấu hình ➔</span>
+            </div>
 
-</section>
-<!-- SECTIONS: DÂY CHUYỂN SẢN XUẤT -->
-<section id="day-chuyen-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-  <div class="text-center mb-12">
-    <h2 class="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight">
-      DÂY CHUYỂN SẢN XUẤT TỰ ĐỘNG DƯƠNG ANH
-    </h2>
-    <p class="text-zinc-400 text-sm mt-2 max-w-2xl mx-auto">
-      Giải pháp đồng bộ toàn diện từ khâu sơ chế, định lượng đến đóng gói thành phẩm cho nhà xưởng.
-    </p>
-  </div>
+            <!-- 4. CHẢ CÁ -->
+            <div class="bg-zinc-900/80 border border-amber-500/30 rounded-2xl p-6 hover:border-amber-400 transition group">
+              <div class="text-3xl mb-3">🐟</div>
+              <h3 class="text-lg font-bold text-white mb-2">Dây Chuyền Chả Cá</h3>
+              <p class="text-xs text-zinc-400 mb-4 leading-relaxed">Máy lọc xương cá ➔ Máy quết dai ➔ Máy định hình bánh/viên ➔ Băng tải chiên tự động.</p>
+              <span class="text-amber-400 text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition">Tư vấn cấu hình ➔</span>
+            </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    <!-- 1. CHẢ LỤA & GIÒ CHẢ -->
-    <div class="bg-zinc-900/80 border border-amber-500/30 rounded-2xl p-6 hover:border-amber-400 transition group">
-      <div class="text-3xl mb-3">🥩</div>
-      <h3 class="text-lg font-bold text-white mb-2">Dây Chuyền Chả Lụa & Giò Chả</h3>
-      <p class="text-xs text-zinc-400 mb-4 leading-relaxed">Máy xay thịt cao tốc ➔ Máy định lượng giò chả ➔ Tủ hấp công nghiệp ➔ Máy đóng gói chân không.</p>
-      <span class="text-amber-400 text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition">Tư vấn cấu hình ➔</span>
-    </div>
+            <!-- 5. BÚN & PHỞ TƯƠI -->
+            <div class="bg-zinc-900/80 border border-amber-500/30 rounded-2xl p-6 hover:border-amber-400 transition group">
+              <div class="text-3xl mb-3">🍜</div>
+              <h3 class="text-lg font-bold text-white mb-2">Dây Chuyền Bún & Phở Tươi</h3>
+              <p class="text-xs text-zinc-400 mb-4 leading-relaxed">Hệ thống trộn bột ➔ Máy ép đùn/tráng bánh ➔ Buồng hấp chín ➔ Máy cắt sợi tự động.</p>
+              <span class="text-amber-400 text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition">Tư vấn cấu hình ➔</span>
+            </div>
 
-    <!-- 2. BÒ VIÊN & CÁ VIÊN -->
-    <div class="bg-zinc-900/80 border border-amber-500/30 rounded-2xl p-6 hover:border-amber-400 transition group">
-      <div class="text-3xl mb-3">🧆</div>
-      <h3 class="text-lg font-bold text-white mb-2">Dây Chuyền Bò Viên & Cá Viên</h3>
-      <p class="text-xs text-zinc-400 mb-4 leading-relaxed">Máy quết chả ➔ Mô-đun tạo viên tự động ➔ Nồi luộc định hình ➔ Băng tải làm mát.</p>
-      <span class="text-amber-400 text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition">Tư vấn cấu hình ➔</span>
-    </div>
-
-    <!-- 3. XÚC XÍCH & LẠP XƯỞNG -->
-    <div class="bg-zinc-900/80 border border-amber-500/30 rounded-2xl p-6 hover:border-amber-400 transition group">
-      <div class="text-3xl mb-3">🌭</div>
-      <h3 class="text-lg font-bold text-white mb-2">Dây Chuyền Xúc Xích & Lạp Xưởng</h3>
-      <p class="text-xs text-zinc-400 mb-4 leading-relaxed">Máy nhồi nén Piston ➔ Mô-đun xoắn vặn ➔ Tủ sấy / xông khói ➔ Đóng gói tự động.</p>
-      <span class="text-amber-400 text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition">Tư vấn cấu hình ➔</span>
-    </div>
-
-    <!-- 4. CHẢ CÁ -->
-    <div class="bg-zinc-900/80 border border-amber-500/30 rounded-2xl p-6 hover:border-amber-400 transition group">
-      <div class="text-3xl mb-3">🐟</div>
-      <h3 class="text-lg font-bold text-white mb-2">Dây Chuyền Chả Cá</h3>
-      <p class="text-xs text-zinc-400 mb-4 leading-relaxed">Máy lọc xương cá ➔ Máy quết dai ➔ Máy định hình bánh/viên ➔ Băng tải chiên tự động.</p>
-      <span class="text-amber-400 text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition">Tư vấn cấu hình ➔</span>
-    </div>
-
-    <!-- 5. BÚN & PHỞ TƯƠI -->
-    <div class="bg-zinc-900/80 border border-amber-500/30 rounded-2xl p-6 hover:border-amber-400 transition group">
-      <div class="text-3xl mb-3">🍜</div>
-      <h3 class="text-lg font-bold text-white mb-2">Dây Chuyền Bún & Phở Tươi</h3>
-      <p class="text-xs text-zinc-400 mb-4 leading-relaxed">Hệ thống trộn bột ➔ Máy ép đùn/tráng bánh ➔ Buồng hấp chín ➔ Máy cắt sợi tự động.</p>
-      <span class="text-amber-400 text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition">Tư vấn cấu hình ➔</span>
-    </div>
-
-    <!-- 6. THIẾT KẾ THEO YÊU CẦU -->
-    <div class="bg-zinc-900/80 border border-amber-500/30 rounded-2xl p-6 hover:border-amber-400 transition group">
-      <div class="text-3xl mb-3">⚙️</div>
-      <h3 class="text-lg font-bold text-white mb-2">Dây Chuyền Theo Yêu Cầu</h3>
-      <p class="text-xs text-zinc-400 mb-4 leading-relaxed">Tư vấn và thiết kế dây chuyền công nghiệp riêng biệt theo công suất & mặt bằng nhà xưởng.</p>
-      <span class="text-amber-400 text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition">Liên hệ Kỹ sư Dương Anh ➔</span>
-    </div>
-  </div>
-</section>
+            <!-- 6. THIẾT KẾ THEO YÊU CẦU -->
+            <div class="bg-zinc-900/80 border border-amber-500/30 rounded-2xl p-6 hover:border-amber-400 transition group">
+              <div class="text-3xl mb-3">⚙️</div>
+              <h3 class="text-lg font-bold text-white mb-2">Dây Chuyền Theo Yêu Cầu</h3>
+              <p class="text-xs text-zinc-400 mb-4 leading-relaxed">Tư vấn và thiết kế dây chuyền công nghiệp riêng biệt theo công suất & mặt bằng nhà xưởng.</p>
+              <span class="text-amber-400 text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition">Liên hệ Kỹ sư Dương Anh ➔</span>
+            </div>
+          </div>
+        </section>
 
         <!-- SECTION 3: TÌM THỢ KỸ THUẬT -->
         <section id="sec-technicians" class="page-section hidden py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -798,77 +797,48 @@
             document.getElementById('signup-error').classList.add('hidden');
         }
 
-        /// Hàm Xử Lý Đăng Nhập (Tích hợp Mật Khẩu Khẩn Cấp Dự Phòng)
-async function handleLogin(e) {
-    e.preventDefault();
-    const email = document.getElementById('admin-email').value.trim();
-    const password = document.getElementById('admin-password').value;
-    const errorEl = document.getElementById('login-error');
+        // Hàm Xử Lý Đăng Nhập (Tích hợp Mật Khẩu Khẩn Cấp Dự Phòng)
+        async function handleLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('admin-email').value.trim();
+            const password = document.getElementById('admin-password').value;
+            const errorEl = document.getElementById('login-error');
 
-    // CHẾ ĐỘ DỰ PHÒNG KHẨN CẤP: Vào thẳng Bảng Quản Trị nếu Supabase bị lỗi mạng
-    if (email === 'admin@duonganh.vn' && password === 'Duonganh@2026') {
-        errorEl.classList.add('hidden');
-        closeLoginModal();
-        showToast('Đăng nhập Quản Trị Khẩn Cấp thành công!', 'success');
-        showSection('admin');
-        return;
-    }
+            // CHẾ ĐỘ DỰ PHÒNG KHẨN CẤP: Vào thẳng Bảng Quản Trị nếu Supabase bị lỗi mạng
+            if (email === 'admin@duonganh.vn' && password === 'Duonganh@2026') {
+                errorEl.classList.add('hidden');
+                closeLoginModal();
+                showToast('Đăng nhập Quản Trị Khẩn Cấp thành công!', 'success');
+                showSection('admin');
+                return;
+            }
 
-    if (!supabaseClient) {
-        showToast('Chưa kết nối Supabase!', 'error');
-        return;
-    }
+            if (!supabaseClient) {
+                showToast('Chưa kết nối Supabase!', 'error');
+                return;
+            }
 
-    try {
-        const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
+            try {
+                const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
 
-        if (error) {
-            let msg = error.message;
-            if (msg === 'Invalid login credentials') msg = 'Email hoặc mật khẩu không chính xác!';
-            if (msg.includes('Email not confirmed')) msg = 'Tài khoản chưa được kích hoạt!';
-            errorEl.innerText = 'Lỗi: ' + msg;
-            errorEl.classList.remove('hidden');
-        } else {
-            errorEl.classList.add('hidden');
-            closeLoginModal();
-            showToast('Đăng nhập Quản Trị thành công!', 'success');
-            showSection('admin');
+                if (error) {
+                    let msg = error.message;
+                    if (msg === 'Invalid login credentials') msg = 'Email hoặc mật khẩu không chính xác!';
+                    if (msg.includes('Email not confirmed')) msg = 'Tài khoản chưa được kích hoạt!';
+                    errorEl.innerText = 'Lỗi: ' + msg;
+                    errorEl.classList.remove('hidden');
+                } else {
+                    errorEl.classList.add('hidden');
+                    closeLoginModal();
+                    showToast('Đăng nhập Quản Trị thành công!', 'success');
+                    showSection('admin');
+                }
+            } catch (err) {
+                errorEl.innerText = 'Kết nối Supabase bị ngắt (Failed to fetch). Hệ thống đã tự động kích hoạt Đăng Nhập Khẩn Cấp với: admin@duonganh.vn / Duonganh@2026';
+                errorEl.classList.remove('hidden');
+            }
         }
-    } catch (err) {
-        errorEl.innerText = 'Kết nối Supabase bị ngắt (Failed to fetch). Hệ thống đã tự động kích hoạt Đăng Nhập Khẩn Cấp với: admin@duonganh.vn / Duonganh@2026';
-        errorEl.classList.remove('hidden');
-    }
-}
 
-// Hàm Xử Lý Đăng Ký Trực Tiếp
-async function handleSignUp(e) {
-    e.preventDefault();
-    const email = document.getElementById('signup-email').value.trim();
-    const password = document.getElementById('signup-password').value;
-    const errorEl = document.getElementById('signup-error');
-
-    if (!supabaseClient) {
-        showToast('Chưa kết nối Supabase!', 'error');
-        return;
-    }
-
-    try {
-        const { data, error } = await supabaseClient.auth.signUp({ email, password });
-
-        if (error) {
-            errorEl.innerText = 'Lỗi tạo tài khoản: ' + error.message;
-            errorEl.classList.remove('hidden');
-        } else {
-            errorEl.classList.add('hidden');
-            closeLoginModal();
-            showToast('Tạo tài khoản & Đăng nhập thành công!', 'success');
-            showSection('admin');
-        }
-    } catch (err) {
-        errorEl.innerText = 'Không thể kết nối Supabase. Anh chuyển sang tab ĐĂNG NHẬP dùng tài khoản: admin@duonganh.vn / Mật khẩu: Duonganh@2026';
-        errorEl.classList.remove('hidden');
-    }
-}
         // Hàm Xử Lý Đăng Ký Trực Tiếp trên Website
         async function handleSignUp(e) {
             e.preventDefault();
@@ -881,19 +851,24 @@ async function handleSignUp(e) {
                 return;
             }
 
-            const { data, error } = await supabaseClient.auth.signUp({ email, password });
+            try {
+                const { data, error } = await supabaseClient.auth.signUp({ email, password });
 
-            if (error) {
-                errorEl.innerText = 'Lỗi tạo tài khoản: ' + error.message;
+                if (error) {
+                    errorEl.innerText = 'Lỗi tạo tài khoản: ' + error.message;
+                    errorEl.classList.remove('hidden');
+                } else if (data.user && !data.session) {
+                    errorEl.innerText = 'Tạo thành công nhưng Supabase yêu cầu xác nhận email! Hãy tắt ô "Xác nhận email" trong Supabase Dashboard.';
+                    errorEl.classList.remove('hidden');
+                } else {
+                    errorEl.classList.add('hidden');
+                    closeLoginModal();
+                    showToast('Tạo tài khoản & Đăng nhập thành công!', 'success');
+                    showSection('admin');
+                }
+            } catch (err) {
+                errorEl.innerText = 'Không thể kết nối Supabase. Anh chuyển sang tab ĐĂNG NHẬP dùng tài khoản: admin@duonganh.vn / Mật khẩu: Duonganh@2026';
                 errorEl.classList.remove('hidden');
-            } else if (data.user && !data.session) {
-                errorEl.innerText = 'Tạo thành công nhưng Supabase yêu cầu xác nhận email! Hãy tắt ô "Xác nhận email" trong Supabase Dashboard.';
-                errorEl.classList.remove('hidden');
-            } else {
-                errorEl.classList.add('hidden');
-                closeLoginModal();
-                showToast('Tạo tài khoản & Đăng nhập thành công!', 'success');
-                showSection('admin');
             }
         }
 
@@ -967,23 +942,25 @@ async function handleSignUp(e) {
                 items = items.filter(i => i.category.includes(catFilter));
             }
 
-            grid.innerHTML = items.map(p => `
-                <div class="glass-gold-card rounded-2xl overflow-hidden flex flex-col justify-between">
-                    <div>
-                        <div class="h-48 overflow-hidden bg-black relative">
-                            <img src="${p.image_url || 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80'}" alt="${p.name}" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                            <span class="absolute top-3 left-3 px-2.5 py-1 bg-gold-gradient text-black font-extrabold text-[10px] rounded uppercase">${p.category || 'Dương Anh Tech'}</span>
+            if (grid) {
+                grid.innerHTML = items.map(p => `
+                    <div class="glass-gold-card rounded-2xl overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <div class="h-48 overflow-hidden bg-black relative">
+                                <img src="${p.image_url || 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80'}" alt="${p.name}" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                                <span class="absolute top-3 left-3 px-2.5 py-1 bg-gold-gradient text-black font-extrabold text-[10px] rounded uppercase">${p.category || 'Dương Anh Tech'}</span>
+                            </div>
+                            <div class="p-5 space-y-2">
+                                <h3 class="text-base font-bold text-white leading-snug">${p.name}</h3>
+                                <p class="text-xs text-zinc-400 leading-relaxed">${p.specifications || 'Chế tạo tiêu chuẩn tự động hóa cao.'}</p>
+                            </div>
                         </div>
-                        <div class="p-5 space-y-2">
-                            <h3 class="text-base font-bold text-white leading-snug">${p.name}</h3>
-                            <p class="text-xs text-zinc-400 leading-relaxed">${p.specifications || 'Chế tạo tiêu chuẩn tự động hóa cao.'}</p>
+                        <div class="p-5 pt-0 flex gap-2">
+                            <a href="tel:0900000000" class="flex-1 text-center py-2.5 bg-gold-gradient hover:opacity-95 text-black font-extrabold rounded-xl text-xs transition">NHẬN BÁO GIÁ ZALO</a>
                         </div>
                     </div>
-                    <div class="p-5 pt-0 flex gap-2">
-                        <a href="tel:0900000000" class="flex-1 text-center py-2.5 bg-gold-gradient hover:opacity-95 text-black font-extrabold rounded-xl text-xs transition">NHẬN BÁO GIÁ ZALO</a>
-                    </div>
-                </div>
-            `).join('');
+                `).join('');
+            }
         }
 
         function filterProducts(cat) {
@@ -993,8 +970,8 @@ async function handleSignUp(e) {
         // Render Vehicles
         async function renderVehicles() {
             const grid = document.getElementById('vehicles-grid');
-            const prov = document.getElementById('filter-veh-province').value;
-            const type = document.getElementById('filter-veh-type').value;
+            const prov = document.getElementById('filter-veh-province') ? document.getElementById('filter-veh-province').value : '';
+            const type = document.getElementById('filter-veh-type') ? document.getElementById('filter-veh-type').value : '';
 
             let items = [];
             if (supabaseClient) {
@@ -1008,31 +985,33 @@ async function handleSignUp(e) {
             if (prov) items = items.filter(v => v.province === prov);
             if (type) items = items.filter(v => v.vehicle_type === type);
 
-            if (items.length === 0) {
-                grid.innerHTML = `<div class="col-span-3 text-center py-8 text-zinc-500 text-xs">Chưa tìm thấy nhà xe phù hợp tại khu vực này.</div>`;
-                return;
-            }
+            if (grid) {
+                if (items.length === 0) {
+                    grid.innerHTML = `<div class="col-span-3 text-center py-8 text-zinc-500 text-xs">Chưa tìm thấy nhà xe phù hợp tại khu vực này.</div>`;
+                    return;
+                }
 
-            grid.innerHTML = items.map(v => `
-                <div class="glass-gold-card p-5 rounded-2xl space-y-3 flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-start gap-2">
-                            <h3 class="font-bold text-white text-base">${v.title}</h3>
-                            <span class="px-2 py-0.5 bg-amber-500/10 text-amber-400 border border-amber-500/30 text-[10px] rounded font-bold whitespace-nowrap">${v.province}</span>
+                grid.innerHTML = items.map(v => `
+                    <div class="glass-gold-card p-5 rounded-2xl space-y-3 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start gap-2">
+                                <h3 class="font-bold text-white text-base">${v.title}</h3>
+                                <span class="px-2 py-0.5 bg-amber-500/10 text-amber-400 border border-amber-500/30 text-[10px] rounded font-bold whitespace-nowrap">${v.province}</span>
+                            </div>
+                            <p class="text-xs text-zinc-400 mt-2"><i class="fa-solid fa-truck text-amber-400 mr-1.5"></i> ${v.vehicle_type} - Tải trọng: ${v.capacity || 'Đa dạng'}</p>
+                            <p class="text-xs text-zinc-300 mt-2">Tài xế / Quản lý: <strong>${v.driver_name || 'Liên hệ ngay'}</strong></p>
                         </div>
-                        <p class="text-xs text-zinc-400 mt-2"><i class="fa-solid fa-truck text-amber-400 mr-1.5"></i> ${v.vehicle_type} - Tải trọng: ${v.capacity || 'Đa dạng'}</p>
-                        <p class="text-xs text-zinc-300 mt-2">Tài xế / Quản lý: <strong>${v.driver_name || 'Liên hệ ngay'}</strong></p>
+                        <a href="tel:${v.phone}" class="w-full text-center py-2.5 bg-zinc-900 hover:bg-gold-500 hover:text-black text-amber-400 font-bold rounded-xl text-xs border border-amber-500/40 transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-phone"></i> Gọi Ngay (${v.phone})
+                        </a>
                     </div>
-                    <a href="tel:${v.phone}" class="w-full text-center py-2.5 bg-zinc-900 hover:bg-gold-500 hover:text-black text-amber-400 font-bold rounded-xl text-xs border border-amber-500/40 transition flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-phone"></i> Gọi Ngay (${v.phone})
-                    </a>
-                </div>
-            `).join('');
+                `).join('');
+            }
         }
 
         function resetVehFilter() {
-            document.getElementById('filter-veh-province').value = '';
-            document.getElementById('filter-veh-type').value = '';
+            if(document.getElementById('filter-veh-province')) document.getElementById('filter-veh-province').value = '';
+            if(document.getElementById('filter-veh-type')) document.getElementById('filter-veh-type').value = '';
             renderVehicles();
         }
 
@@ -1054,21 +1033,23 @@ async function handleSignUp(e) {
             if (prov) items = items.filter(t => t.province === prov);
             if (skill) items = items.filter(t => t.skill === skill);
 
-            grid.innerHTML = items.map(t => `
-                <div class="glass-gold-card p-5 rounded-2xl space-y-3 flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-start gap-2">
-                            <h3 class="font-bold text-white text-base">${t.name}</h3>
-                            <span class="px-2 py-0.5 bg-amber-500/10 text-amber-400 border border-amber-500/30 text-[10px] rounded font-bold">${t.province}</span>
+            if(grid) {
+                grid.innerHTML = items.map(t => `
+                    <div class="glass-gold-card p-5 rounded-2xl space-y-3 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start gap-2">
+                                <h3 class="font-bold text-white text-base">${t.name}</h3>
+                                <span class="px-2 py-0.5 bg-amber-500/10 text-amber-400 border border-amber-500/30 text-[10px] rounded font-bold">${t.province}</span>
+                            </div>
+                            <span class="inline-block mt-2 px-2.5 py-1 bg-zinc-900 border border-zinc-800 text-amber-400 text-[11px] font-bold rounded-md">${t.skill}</span>
+                            <p class="text-xs text-zinc-400 mt-2 leading-relaxed">${t.description || 'Sẵn sàng sửa sự cố máy tại xưởng.'}</p>
                         </div>
-                        <span class="inline-block mt-2 px-2.5 py-1 bg-zinc-900 border border-zinc-800 text-amber-400 text-[11px] font-bold rounded-md">${t.skill}</span>
-                        <p class="text-xs text-zinc-400 mt-2 leading-relaxed">${t.description || 'Sẵn sàng sửa sự cố máy tại xưởng.'}</p>
+                        <a href="tel:${t.phone}" class="w-full text-center py-2.5 bg-zinc-900 hover:bg-gold-500 hover:text-black text-amber-400 font-bold rounded-xl text-xs border border-amber-500/40 transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-headset"></i> Gọi Cứu Hộ (${t.phone})
+                        </a>
                     </div>
-                    <a href="tel:${t.phone}" class="w-full text-center py-2.5 bg-zinc-900 hover:bg-gold-500 hover:text-black text-amber-400 font-bold rounded-xl text-xs border border-amber-500/40 transition flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-headset"></i> Gọi Cứu Hộ (${t.phone})
-                    </a>
-                </div>
-            `).join('');
+                `).join('');
+            }
         }
 
         function resetTechFilter() {
@@ -1094,21 +1075,23 @@ async function handleSignUp(e) {
             items = items.filter(s => (s.type || 'vattudien') === currentSupplierType);
             if (prov) items = items.filter(s => s.province === prov);
 
-            grid.innerHTML = items.map(s => `
-                <div class="glass-gold-card p-5 rounded-2xl space-y-3 flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-start gap-2">
-                            <h3 class="font-bold text-white text-base">${s.shop_name}</h3>
-                            <span class="px-2 py-0.5 bg-amber-500/10 text-amber-400 border border-amber-500/30 text-[10px] rounded font-bold">${s.province}</span>
+            if(grid) {
+                grid.innerHTML = items.map(s => `
+                    <div class="glass-gold-card p-5 rounded-2xl space-y-3 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start gap-2">
+                                <h3 class="font-bold text-white text-base">${s.shop_name}</h3>
+                                <span class="px-2 py-0.5 bg-amber-500/10 text-amber-400 border border-amber-500/30 text-[10px] rounded font-bold">${s.province}</span>
+                            </div>
+                            <p class="text-xs text-zinc-400 mt-2">Mặt hàng: <strong class="text-zinc-200">${s.categories}</strong></p>
+                            <p class="text-xs text-zinc-500 mt-1"><i class="fa-solid fa-location-dot mr-1"></i> ${s.address || 'Địa chỉ kinh doanh tại tỉnh'}</p>
                         </div>
-                        <p class="text-xs text-zinc-400 mt-2">Mặt hàng: <strong class="text-zinc-200">${s.categories}</strong></p>
-                        <p class="text-xs text-zinc-500 mt-1"><i class="fa-solid fa-location-dot mr-1"></i> ${s.address || 'Địa chỉ kinh doanh tại tỉnh'}</p>
+                        <a href="tel:${s.phone}" class="w-full text-center py-2.5 bg-zinc-900 hover:bg-gold-500 hover:text-black text-amber-400 font-bold rounded-xl text-xs border border-amber-500/40 transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-phone"></i> Liên Hệ Mua (${s.phone})
+                        </a>
                     </div>
-                    <a href="tel:${s.phone}" class="w-full text-center py-2.5 bg-zinc-900 hover:bg-gold-500 hover:text-black text-amber-400 font-bold rounded-xl text-xs border border-amber-500/40 transition flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-phone"></i> Liên Hệ Mua (${s.phone})
-                    </a>
-                </div>
-            `).join('');
+                `).join('');
+            }
         }
 
         function filterSupplierType(type) {
@@ -1134,17 +1117,19 @@ async function handleSignUp(e) {
             }
             if (items.length === 0) items = sampleData.posts;
 
-            grid.innerHTML = items.map(post => `
-                <div class="glass-gold-card rounded-2xl p-4 space-y-3 flex flex-col justify-between">
-                    <div>
-                        <img src="${post.image_url || 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80'}" class="w-full h-40 object-cover rounded-xl mb-3 border border-zinc-800">
-                        <span class="text-[10px] text-amber-400 font-extrabold uppercase tracking-wider">${post.category}</span>
-                        <h3 class="font-bold text-white text-base mt-1 leading-snug">${post.title}</h3>
-                        <p class="text-xs text-zinc-400 mt-2 leading-relaxed line-clamp-3">${post.summary || ''}</p>
+            if (grid) {
+                grid.innerHTML = items.map(post => `
+                    <div class="glass-gold-card rounded-2xl p-4 space-y-3 flex flex-col justify-between">
+                        <div>
+                            <img src="${post.image_url || 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80'}" class="w-full h-40 object-cover rounded-xl mb-3 border border-zinc-800">
+                            <span class="text-[10px] text-amber-400 font-extrabold uppercase tracking-wider">${post.category}</span>
+                            <h3 class="font-bold text-white text-base mt-1 leading-snug">${post.title}</h3>
+                            <p class="text-xs text-zinc-400 mt-2 leading-relaxed line-clamp-3">${post.summary || ''}</p>
+                        </div>
+                        <button onclick="showToast('Bài viết chi tiết đang được đăng!', 'info')" class="text-left text-xs font-bold text-amber-400 hover:underline pt-2">Đọc tiếp bài viết →</button>
                     </div>
-                    <button onclick="showToast('Bài viết chi tiết đang được đăng!', 'info')" class="text-left text-xs font-bold text-amber-400 hover:underline pt-2">Đọc tiếp bài viết →</button>
-                </div>
-            `).join('');
+                `).join('');
+            }
         }
 
         // Admin Tab Logic & Forms
@@ -1153,10 +1138,12 @@ async function handleSignUp(e) {
             const tabs = ['prod', 'veh', 'tech', 'sup', 'post'];
             tabs.forEach(t => {
                 const btn = document.getElementById(`admin-tab-${t}`);
-                if (t === tab) {
-                    btn.className = 'px-4 py-2.5 text-xs font-bold text-amber-400 border-b-2 border-amber-400 whitespace-nowrap';
-                } else {
-                    btn.className = 'px-4 py-2.5 text-xs font-bold text-zinc-400 hover:text-white whitespace-nowrap';
+                if (btn) {
+                    if (t === tab) {
+                        btn.className = 'px-4 py-2.5 text-xs font-bold text-amber-400 border-b-2 border-amber-400 whitespace-nowrap';
+                    } else {
+                        btn.className = 'px-4 py-2.5 text-xs font-bold text-zinc-400 hover:text-white whitespace-nowrap';
+                    }
                 }
             });
 
@@ -1287,7 +1274,6 @@ async function handleSignUp(e) {
             dlAnchor.remove();
             showToast('Đã xuất file dữ liệu dự phòng về máy!', 'success');
         }
-    </script>
     </script>
 </body>
 </html>
