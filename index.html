@@ -115,9 +115,6 @@
         <div id="mobile-menu" class="hidden lg:hidden bg-zinc-950 border-b border-amber-500/30 px-4 pt-3 pb-6 space-y-2">
             <button onclick="showSection('home'); toggleMobileMenu()" class="block w-full text-left px-3 py-2.5 text-sm font-bold text-zinc-200 hover:bg-zinc-900 hover:text-gold-400 rounded-lg">Trang Chủ</button>
             <button onclick="showSection('products'); toggleMobileMenu()" class="block w-full text-left px-3 py-2.5 text-sm font-bold text-zinc-200 hover:bg-zinc-900 hover:text-gold-400 rounded-lg">Sản Phẩm Dương Anh</button>
-            <button onclick="showSection('vehicles'); toggleMobileMenu()" class="block w-full text-left px-3 py-2.5 text-sm font-bold text-zinc-200 hover:bg-zinc-900 hover:text-gold-400 rounded-lg">Tìm Xe Vận Chuyển</button>
-            <button onclick="showSection('technicians'); toggleMobileMenu()" class="block w-full text-left px-3 py-2.5 text-sm font-bold text-zinc-200 hover:bg-zinc-900 hover:text-gold-400 rounded-lg">Tìm Thợ Kỹ Thuật</button>
-            <button onclick="showSection('suppliers'); toggleMobileMenu()" class="block w-full text-left px-3 py-2.5 text-sm font-bold text-zinc-200 hover:bg-zinc-900 hover:text-gold-400 rounded-lg">Vật Tư Điện & Phụ Gia</button>
             <button onclick="showSection('posts'); toggleMobileMenu()" class="block w-full text-left px-3 py-2.5 text-sm font-bold text-zinc-200 hover:bg-zinc-900 hover:text-gold-400 rounded-lg">Tin Tức Kỹ Thuật</button>
         </div>
     </header>
@@ -161,7 +158,7 @@
                             <div class="relative mx-auto max-w-md lg:max-w-none">
                                 <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-amber-500 to-yellow-600 opacity-30 blur-xl"></div>
                                <div class="relative bg-zinc-950 border border-amber-500/40 rounded-2xl p-6 shadow-2xl space-y-4">
-                                    <!-- ẢNH SẢN PHẨM (ĐÃ BỎ NHÃN ĐÈ NÊN HÌNH TRONG SẠCH) -->
+                                    <!-- ẢNH SẢN PHẨM -->
                                     <div class="overflow-hidden rounded-xl border border-zinc-800">
                                       <img src="Designer (1).png" alt="Máy Định Lượng Giò Chả Tự Động" class="w-full h-auto object-cover">
                                     </div>
@@ -206,12 +203,12 @@
             <div class="bg-gradient-to-br from-zinc-900 via-zinc-950 to-zinc-900 border-2 border-amber-500/40 rounded-3xl p-6 lg:p-8 shadow-2xl relative overflow-hidden">
               <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 
-                <!-- Ảnh Máy Chính (Đã bỏ nhãn đè - Hình ảnh trong sạch) -->
+                <!-- Ảnh Máy Chính -->
                 <div class="lg:col-span-5 rounded-2xl overflow-hidden border border-amber-500/30">
                   <img src="may-dinh-luong-cha-lua.png" alt="Máy Định Lượng Giò Chả Tự Động Dương Anh" class="w-full h-auto object-cover">
                 </div>
 
-                <!-- Thông Tin Máy Chính (Nhãn Sản Phẩm Cốt Lõi chuyển sang bên ngoài ảnh) -->
+                <!-- Thông Tin Máy Chính -->
                 <div class="lg:col-span-7 space-y-4">
                   <span class="inline-block bg-amber-400 text-black font-extrabold text-xs px-3 py-1 rounded shadow-md uppercase tracking-wider">
                     ⭐ SẢN PHẨM CỐT LÕI
@@ -344,69 +341,6 @@
           </div>
         </section>
 
-        <!-- SECTION 3: TÌM THỢ KỸ THUẬT -->
-        <section id="sec-technicians" class="page-section hidden py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-zinc-950 p-6 rounded-2xl border border-amber-500/30 mb-8">
-                <h2 class="text-2xl font-black text-white uppercase">DANH BẠ THỢ KỸ THUẬT ĐỊA PHƯƠNG</h2>
-                <p class="text-xs text-zinc-400 mb-6 mt-1">Liên hệ đội thợ xử lý sự cố tủ điện, lập trình PLC & bảo trì máy thực phẩm tận nơi.</p>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    <div>
-                        <label class="block text-xs text-zinc-400 mb-1">Tỉnh / Thành</label>
-                        <select id="filter-tech-province" onchange="renderTechnicians()" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2.5 text-sm text-zinc-200">
-                            <option value="">-- Tất cả tỉnh thành --</option>
-                            <option value="Đồng Nai">Đồng Nai</option>
-                            <option value="TP. Hồ Chí Minh">TP. Hồ Chí Minh</option>
-                            <option value="Bình Dương">Bình Dương</option>
-                            <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs text-zinc-400 mb-1">Chuyên Môn Kỹ Thuật</label>
-                        <select id="filter-tech-skill" onchange="renderTechnicians()" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2.5 text-sm text-zinc-200">
-                            <option value="">-- Tất cả chuyên môn --</option>
-                            <option value="Lập trình PLC & Tủ Điện">Lập trình PLC & Tủ Điện</option>
-                            <option value="Bảo trì Cơ khí & Băng tải">Bảo trì Cơ khí & Băng tải</option>
-                            <option value="Sửa Board Mạch Biến Tần">Sửa Board Mạch Biến Tần</option>
-                        </select>
-                    </div>
-                    <div class="flex items-end">
-                        <button onclick="resetTechFilter()" class="w-full bg-zinc-800 hover:bg-zinc-700 text-zinc-200 py-2.5 rounded-lg text-xs font-bold border border-zinc-700">Xóa Bộ Lọc</button>
-                    </div>
-                </div>
-            </div>
-            <div id="technicians-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-        </section>
-
-        <!-- SECTION 4: VẬT TƯ ĐIỆN & PHỤ GIA -->
-        <section id="sec-suppliers" class="page-section hidden py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-zinc-950 p-6 rounded-2xl border border-amber-500/30 mb-8">
-                <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-6">
-                    <div>
-                        <h2 class="text-2xl font-black text-white uppercase">VẬT TƯ ĐIỆN & PHỤ GIA THỰC PHẨM</h2>
-                        <p class="text-xs text-zinc-400 mt-1">Tra cứu điểm bán biến tần, rơ-le linh kiện & nhà cung cấp nguyên liệu giò chả.</p>
-                    </div>
-                    <div class="inline-flex bg-zinc-900 p-1.5 rounded-xl border border-zinc-800">
-                        <button onclick="filterSupplierType('vattudien')" id="tab-sup-vat-tu" class="px-4 py-2 text-xs font-bold rounded-lg bg-gold-gradient text-black">Vật Tư Điện</button>
-                        <button onclick="filterSupplierType('nguyenlieu')" id="tab-sup-nguyen-lieu" class="px-4 py-2 text-xs font-bold rounded-lg text-zinc-400 hover:text-white">Nguyên Liệu / Phụ Gia</button>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs text-zinc-400 mb-1">Lọc theo Tỉnh / Thành</label>
-                        <select id="filter-sup-province" onchange="renderSuppliers()" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2.5 text-sm text-zinc-200">
-                            <option value="">-- Tất cả tỉnh thành --</option>
-                            <option value="Đồng Nai">Đồng Nai</option>
-                            <option value="TP. Hồ Chí Minh">TP. Hồ Chí Minh</option>
-                            <option value="Bình Dương">Bình Dương</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div id="suppliers-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-        </section>
-
         <!-- SECTION 5: TIN TỨC NGÀNH -->
         <section id="sec-posts" class="page-section hidden py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-8 border-b border-zinc-800 pb-4">
@@ -424,7 +358,7 @@
                         <h2 class="text-2xl font-black text-white flex items-center gap-2 uppercase">
                             <i class="fa-solid fa-sliders text-amber-400"></i> BẢNG QUẢN TRỊ DƯƠNG ANH TECH
                         </h2>
-                        <p class="text-xs text-zinc-400 mt-1">Cập nhật trực tiếp máy móc, nhà xe, thợ kỹ thuật, cửa hàng và bài viết vào CSDL Supabase.</p>
+                        <p class="text-xs text-zinc-400 mt-1">Cập nhật trực tiếp máy móc và bài viết vào CSDL Supabase.</p>
                     </div>
                     <div class="flex gap-2">
                         <button onclick="exportDataBackup()" class="px-4 py-2.5 bg-zinc-900 hover:bg-zinc-800 text-amber-400 rounded-xl text-xs font-bold flex items-center gap-2 border border-amber-500/30">
@@ -439,9 +373,6 @@
                 <!-- Admin Sub-tabs -->
                 <div class="flex border-b border-zinc-800 overflow-x-auto mb-8 gap-2">
                     <button onclick="switchAdminTab('prod')" id="admin-tab-prod" class="px-4 py-2.5 text-xs font-bold text-amber-400 border-b-2 border-amber-400 whitespace-nowrap">+ Thêm Máy Móc</button>
-                    <button onclick="switchAdminTab('veh')" id="admin-tab-veh" class="px-4 py-2.5 text-xs font-bold text-zinc-400 hover:text-white whitespace-nowrap">+ Thêm Nhà Xe</button>
-                    <button onclick="switchAdminTab('tech')" id="admin-tab-tech" class="px-4 py-2.5 text-xs font-bold text-zinc-400 hover:text-white whitespace-nowrap">+ Thêm Thợ</button>
-                    <button onclick="switchAdminTab('sup')" id="admin-tab-sup" class="px-4 py-2.5 text-xs font-bold text-zinc-400 hover:text-white whitespace-nowrap">+ Thêm Cửa Hàng</button>
                     <button onclick="switchAdminTab('post')" id="admin-tab-post" class="px-4 py-2.5 text-xs font-bold text-zinc-400 hover:text-white whitespace-nowrap">+ Thêm Bài Viết</button>
                 </div>
 
@@ -479,120 +410,7 @@
                     <button type="submit" class="px-6 py-3 bg-gold-gradient hover:opacity-90 text-black font-extrabold rounded-xl text-xs transition">LƯU MÁY MÓC VÀO CSDL</button>
                 </form>
 
-                <!-- Form 2: Add Vehicle -->
-                <form id="form-add-vehicle" onsubmit="handleAddVehicle(event)" class="admin-form hidden space-y-4 max-w-3xl">
-                    <h3 class="text-sm font-bold text-amber-400 uppercase tracking-wider mb-2">Thêm Nhà Xe Vận Chuyển</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs text-zinc-400 mb-1">Tên Bãi Xe / Tài Xế *</label>
-                            <input type="text" id="v-title" required placeholder="VD: Xe Cẩu Tự Hành Hùng Phát" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm text-white">
-                        </div>
-                        <div>
-                            <label class="block text-xs text-zinc-400 mb-1">Số Điện Thoại Liên Hệ *</label>
-                            <input type="tel" id="v-phone" required placeholder="0901234567" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm text-white">
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                        <div>
-                            <label class="block text-xs text-zinc-400 mb-1">Tỉnh / Thành Bãi Xe *</label>
-                            <input type="text" id="v-province" required placeholder="VD: Đồng Nai" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm text-white">
-                        </div>
-                        <div>
-                            <label class="block text-xs text-zinc-400 mb-1">Loại Xe</label>
-                            <select id="v-type" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm text-white">
-                                <option value="Xe cẩu tự hành">Xe Cẩu Tự Hành</option>
-                                <option value="Rơ-moóc sàn thấp">Rơ-moóc Sàn Thấp</option>
-                                <option value="Xe tải thùng">Xe Tải Thùng</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs text-zinc-400 mb-1">Tải Trọng (Tấn)</label>
-                            <input type="text" id="v-cap" placeholder="VD: 15 Tấn" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm text-white">
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-xs text-zinc-400 mb-1">Link Ảnh Xe (Tùy chọn)</label>
-                        <input type="url" id="v-img" placeholder="https://..." class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm text-white">
-                    </div>
-                    <button type="submit" class="px-6 py-3 bg-gold-gradient hover:opacity-90 text-black font-extrabold rounded-xl text-xs transition">LƯU NHÀ XE</button>
-                </form>
-
-                <!-- Form 3: Add Tech -->
-                <form id="form-add-tech" onsubmit="handleAddTech(event)" class="admin-form hidden space-y-4 max-w-3xl">
-                    <h3 class="text-sm font-bold text-amber-400 uppercase tracking-wider mb-2">Thêm Thợ Kỹ Thuật Địa Phương</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs text-zinc-400 mb-1">Họ Tên Thợ / Đội Kỹ Thuật *</label>
-                            <input type="text" id="t-name" required placeholder="VD: Nguyễn Văn Tuấn (Kỹ Sư PLC)" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm text-white">
-                        </div>
-                        <div>
-                            <label class="block text-xs text-zinc-400 mb-1">Số Điện Thoại / Zalo *</label>
-                            <input type="tel" id="t-phone" required placeholder="0988776655" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm text-white">
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                        <div>
-                            <label class="block text-xs text-zinc-400 mb-1">Tỉnh / Thành *</label>
-                            <input type="text" id="t-province" required placeholder="VD: TP. Hồ Chí Minh" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm text-white">
-                        </div>
-                        <div>
-                            <label class="block text-xs text-zinc-400 mb-1">Quận / Huyện</label>
-                            <input type="text" id="t-district" placeholder="VD: Quận 12" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm text-white">
-                        </div>
-                        <div>
-                            <label class="block text-xs text-zinc-400 mb-1">Chuyên Môn *</label>
-                            <select id="t-skill" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm text-white">
-                                <option value="Lập trình PLC & Tủ Điện">Lập trình PLC & Tủ Điện</option>
-                                <option value="Bảo trì Cơ khí & Băng tải">Bảo trì Cơ khí & Băng tải</option>
-                                <option value="Sửa Board Mạch Biến Tần">Sửa Board Mạch Biến Tần</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-xs text-zinc-400 mb-1">Mô Tả Năng Lực</label>
-                        <textarea id="t-desc" rows="2" placeholder="VD: Nhận sửa tủ điện tự động máy giò chả tận xưởng 24/7." class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm text-white"></textarea>
-                    </div>
-                    <button type="submit" class="px-6 py-3 bg-gold-gradient hover:opacity-90 text-black font-extrabold rounded-xl text-xs transition">LƯU THÔNG TIN THỢ</button>
-                </form>
-
-                <!-- Form 4: Add Supplier -->
-                <form id="form-add-supplier" onsubmit="handleAddSupplier(event)" class="admin-form hidden space-y-4 max-w-3xl">
-                    <h3 class="text-sm font-bold text-amber-400 uppercase tracking-wider mb-2">Thêm Cửa Hàng Vật Tư / Phụ Gia</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs text-zinc-400 mb-1">Tên Cửa Hàng / Đại Lý *</label>
-                            <input type="text" id="s-name" required placeholder="VD: Cửa Hàng Điện Công Nghiệp Tân Long" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm text-white">
-                        </div>
-                        <div>
-                            <label class="block text-xs text-zinc-400 mb-1">Số Điện Thoại *</label>
-                            <input type="tel" id="s-phone" required placeholder="0909112233" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm text-white">
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                        <div>
-                            <label class="block text-xs text-zinc-400 mb-1">Loại Nhà Cung Cấp *</label>
-                            <select id="s-type" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm text-white">
-                                <option value="vattudien">Vật Tư Điện Công Nghiệp</option>
-                                <option value="nguyenlieu">Nguyên Liệu / Phụ Gia Thực Phẩm</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs text-zinc-400 mb-1">Tỉnh / Thành *</label>
-                            <input type="text" id="s-province" required placeholder="VD: Bình Dương" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm text-white">
-                        </div>
-                        <div>
-                            <label class="block text-xs text-zinc-400 mb-1">Mặt Hàng Cung Cấp *</label>
-                            <input type="text" id="s-cats" required placeholder="VD: Biến tần, PLC, Khí nén" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm text-white">
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-xs text-zinc-400 mb-1">Địa Chỉ Chi Tiết</label>
-                        <input type="text" id="s-address" placeholder="VD: 123 Quốc Lộ 1A, Biên Hòa..." class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm text-white">
-                    </div>
-                    <button type="submit" class="px-6 py-3 bg-gold-gradient hover:opacity-90 text-black font-extrabold rounded-xl text-xs transition">LƯU NHÀ CUNG CẤP</button>
-                </form>
-
-                <!-- Form 5: Add Post -->
+                <!-- Form 2: Add Post -->
                 <form id="form-add-post" onsubmit="handleAddPost(event)" class="admin-form hidden space-y-4 max-w-3xl">
                     <h3 class="text-sm font-bold text-amber-400 uppercase tracking-wider mb-2">Thêm Bài Viết Tin Tức Kỹ Thuật</h3>
                     <div>
@@ -718,24 +536,10 @@
                 { id: 1, name: 'Máy Định Lượng Giò Chả Tự Động 2 Vòi Piston', category: 'Máy giò chả', specifications: 'Năng suất 350kg/giờ. Định lượng chuẩn xác từ 200g - 1kg. Chất liệu Inox 304 tiêu chuẩn ATVSTP.', image_url: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80', video_url: '#' },
                 { id: 2, name: 'Dây Chuyền Quật & Hấp Giò Chả Khép Kín', category: 'Dây chuyền', specifications: 'Đồng bộ từ máy xay thịt, quật chả đến tủ hấp điện điều khiển màn hình cảm ứng PLC.', image_url: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80', video_url: '#' }
             ],
-            vehicles: [
-                { id: 1, title: 'Bãi Xe Cẩu Hùng Phát Đồng Nai', driver_name: 'Anh Hùng', phone: '0912345678', province: 'Đồng Nai', vehicle_type: 'Xe cẩu tự hành', capacity: '15 Tấn', image_url: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80' },
-                { id: 2, title: 'Đội Rơ-Moóc Vận Chuyển Máy Sài Gòn', driver_name: 'Chú Minh', phone: '0988112233', province: 'TP. Hồ Chí Minh', vehicle_type: 'Rơ-moóc sàn thấp', capacity: '40 Tấn', image_url: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80' }
-            ],
-            technicians: [
-                { id: 1, name: 'Kỹ sư Hoàng Văn Tuấn', phone: '0977665544', province: 'Đồng Nai', district: 'Biên Hòa', skill: 'Lập trình PLC & Tủ Điện', description: 'Chuyên khắc phục sự cố máy giò chả, tủ điện tự động hóa khẩn cấp 24/7.' },
-                { id: 2, name: 'Thợ Cơ Khí Bảo Trì Nam Việt', phone: '0933445566', province: 'Bình Dương', district: 'Dĩ An', skill: 'Bảo trì Cơ khí & Băng tải', description: 'Đội thợ nhận căn chỉnh băng tải, thay phớt máy quật chả tận xưởng.' }
-            ],
-            suppliers: [
-                { id: 1, shop_name: 'Vật Tư Điện Công Nghiệp Tân Long', phone: '0903998877', province: 'Đồng Nai', type: 'vattudien', categories: 'Biến tần Schneider, PLC Mitsubishi, Rơ le nhiệt', address: 'KCN Amata, Biên Hòa' },
-                { id: 2, shop_name: 'Công Ty Phụ Gia Thực Phẩm An Phát', phone: '0918223344', province: 'TP. Hồ Chí Minh', type: 'nguyenlieu', categories: 'Phụ gia giò chả tạo giòn dai chuẩn BYT, Vỏ collagen', address: 'Quận Tân Bình, TP.HCM' }
-            ],
             posts: [
                 { id: 1, title: 'Bí quyết tăng 40% năng suất làm giò chả với máy định lượng tự động', category: 'Kỹ thuật máy', summary: 'Ứng dụng công nghệ định lượng piston khí nén giúp tiết kiệm thời gian đóng gói và giữ nguyên độ dai của thịt.', image_url: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80' }
             ]
         };
-
-        let currentSupplierType = 'vattudien';
 
         window.onload = function() {
             try {
@@ -918,9 +722,6 @@
         async function loadAllData() {
             await Promise.all([
                 renderProducts(),
-                renderVehicles(),
-                renderTechnicians(),
-                renderSuppliers(),
                 renderPosts()
             ]);
         }
@@ -967,144 +768,6 @@
             renderProducts(cat);
         }
 
-        // Render Vehicles
-        async function renderVehicles() {
-            const grid = document.getElementById('vehicles-grid');
-            const prov = document.getElementById('filter-veh-province') ? document.getElementById('filter-veh-province').value : '';
-            const type = document.getElementById('filter-veh-type') ? document.getElementById('filter-veh-type').value : '';
-
-            let items = [];
-            if (supabaseClient) {
-                try {
-                    let { data } = await supabaseClient.from('vehicles').select('*');
-                    if (data && data.length > 0) items = data;
-                } catch(e) {}
-            }
-            if (items.length === 0) items = sampleData.vehicles;
-
-            if (prov) items = items.filter(v => v.province === prov);
-            if (type) items = items.filter(v => v.vehicle_type === type);
-
-            if (grid) {
-                if (items.length === 0) {
-                    grid.innerHTML = `<div class="col-span-3 text-center py-8 text-zinc-500 text-xs">Chưa tìm thấy nhà xe phù hợp tại khu vực này.</div>`;
-                    return;
-                }
-
-                grid.innerHTML = items.map(v => `
-                    <div class="glass-gold-card p-5 rounded-2xl space-y-3 flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start gap-2">
-                                <h3 class="font-bold text-white text-base">${v.title}</h3>
-                                <span class="px-2 py-0.5 bg-amber-500/10 text-amber-400 border border-amber-500/30 text-[10px] rounded font-bold whitespace-nowrap">${v.province}</span>
-                            </div>
-                            <p class="text-xs text-zinc-400 mt-2"><i class="fa-solid fa-truck text-amber-400 mr-1.5"></i> ${v.vehicle_type} - Tải trọng: ${v.capacity || 'Đa dạng'}</p>
-                            <p class="text-xs text-zinc-300 mt-2">Tài xế / Quản lý: <strong>${v.driver_name || 'Liên hệ ngay'}</strong></p>
-                        </div>
-                        <a href="tel:${v.phone}" class="w-full text-center py-2.5 bg-zinc-900 hover:bg-gold-500 hover:text-black text-amber-400 font-bold rounded-xl text-xs border border-amber-500/40 transition flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-phone"></i> Gọi Ngay (${v.phone})
-                        </a>
-                    </div>
-                `).join('');
-            }
-        }
-
-        function resetVehFilter() {
-            if(document.getElementById('filter-veh-province')) document.getElementById('filter-veh-province').value = '';
-            if(document.getElementById('filter-veh-type')) document.getElementById('filter-veh-type').value = '';
-            renderVehicles();
-        }
-
-        // Render Technicians
-        async function renderTechnicians() {
-            const grid = document.getElementById('technicians-grid');
-            const prov = document.getElementById('filter-tech-province').value;
-            const skill = document.getElementById('filter-tech-skill').value;
-
-            let items = [];
-            if (supabaseClient) {
-                try {
-                    let { data } = await supabaseClient.from('technicians').select('*');
-                    if (data && data.length > 0) items = data;
-                } catch(e) {}
-            }
-            if (items.length === 0) items = sampleData.technicians;
-
-            if (prov) items = items.filter(t => t.province === prov);
-            if (skill) items = items.filter(t => t.skill === skill);
-
-            if(grid) {
-                grid.innerHTML = items.map(t => `
-                    <div class="glass-gold-card p-5 rounded-2xl space-y-3 flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start gap-2">
-                                <h3 class="font-bold text-white text-base">${t.name}</h3>
-                                <span class="px-2 py-0.5 bg-amber-500/10 text-amber-400 border border-amber-500/30 text-[10px] rounded font-bold">${t.province}</span>
-                            </div>
-                            <span class="inline-block mt-2 px-2.5 py-1 bg-zinc-900 border border-zinc-800 text-amber-400 text-[11px] font-bold rounded-md">${t.skill}</span>
-                            <p class="text-xs text-zinc-400 mt-2 leading-relaxed">${t.description || 'Sẵn sàng sửa sự cố máy tại xưởng.'}</p>
-                        </div>
-                        <a href="tel:${t.phone}" class="w-full text-center py-2.5 bg-zinc-900 hover:bg-gold-500 hover:text-black text-amber-400 font-bold rounded-xl text-xs border border-amber-500/40 transition flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-headset"></i> Gọi Cứu Hộ (${t.phone})
-                        </a>
-                    </div>
-                `).join('');
-            }
-        }
-
-        function resetTechFilter() {
-            document.getElementById('filter-tech-province').value = '';
-            document.getElementById('filter-tech-skill').value = '';
-            renderTechnicians();
-        }
-
-        // Render Suppliers
-        async function renderSuppliers() {
-            const grid = document.getElementById('suppliers-grid');
-            const prov = document.getElementById('filter-sup-province').value;
-
-            let items = [];
-            if (supabaseClient) {
-                try {
-                    let { data } = await supabaseClient.from('suppliers').select('*');
-                    if (data && data.length > 0) items = data;
-                } catch(e) {}
-            }
-            if (items.length === 0) items = sampleData.suppliers;
-
-            items = items.filter(s => (s.type || 'vattudien') === currentSupplierType);
-            if (prov) items = items.filter(s => s.province === prov);
-
-            if(grid) {
-                grid.innerHTML = items.map(s => `
-                    <div class="glass-gold-card p-5 rounded-2xl space-y-3 flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start gap-2">
-                                <h3 class="font-bold text-white text-base">${s.shop_name}</h3>
-                                <span class="px-2 py-0.5 bg-amber-500/10 text-amber-400 border border-amber-500/30 text-[10px] rounded font-bold">${s.province}</span>
-                            </div>
-                            <p class="text-xs text-zinc-400 mt-2">Mặt hàng: <strong class="text-zinc-200">${s.categories}</strong></p>
-                            <p class="text-xs text-zinc-500 mt-1"><i class="fa-solid fa-location-dot mr-1"></i> ${s.address || 'Địa chỉ kinh doanh tại tỉnh'}</p>
-                        </div>
-                        <a href="tel:${s.phone}" class="w-full text-center py-2.5 bg-zinc-900 hover:bg-gold-500 hover:text-black text-amber-400 font-bold rounded-xl text-xs border border-amber-500/40 transition flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-phone"></i> Liên Hệ Mua (${s.phone})
-                        </a>
-                    </div>
-                `).join('');
-            }
-        }
-
-        function filterSupplierType(type) {
-            currentSupplierType = type;
-            document.getElementById('tab-sup-vat-tu').className = type === 'vattudien' 
-                ? 'px-4 py-2 text-xs font-bold rounded-lg bg-gold-gradient text-black' 
-                : 'px-4 py-2 text-xs font-bold rounded-lg text-zinc-400 hover:text-white';
-            document.getElementById('tab-sup-nguyen-lieu').className = type === 'nguyenlieu' 
-                ? 'px-4 py-2 text-xs font-bold rounded-lg bg-gold-gradient text-black' 
-                : 'px-4 py-2 text-xs font-bold rounded-lg text-zinc-400 hover:text-white';
-            renderSuppliers();
-        }
-
         // Render Posts
         async function renderPosts() {
             const grid = document.getElementById('posts-grid');
@@ -1135,7 +798,7 @@
         // Admin Tab Logic & Forms
         function switchAdminTab(tab) {
             document.querySelectorAll('.admin-form').forEach(f => f.classList.add('hidden'));
-            const tabs = ['prod', 'veh', 'tech', 'sup', 'post'];
+            const tabs = ['prod', 'post'];
             tabs.forEach(t => {
                 const btn = document.getElementById(`admin-tab-${t}`);
                 if (btn) {
@@ -1149,9 +812,6 @@
 
             const formMap = {
                 'prod': 'form-add-product',
-                'veh': 'form-add-vehicle',
-                'tech': 'form-add-tech',
-                'sup': 'form-add-supplier',
                 'post': 'form-add-post'
             };
             if (formMap[tab]) document.getElementById(formMap[tab]).classList.remove('hidden');
@@ -1176,72 +836,6 @@
             showToast('Đã thêm sản phẩm máy móc thành công!', 'success');
             e.target.reset();
             renderProducts();
-        }
-
-        async function handleAddVehicle(e) {
-            e.preventDefault();
-            const payload = {
-                title: document.getElementById('v-title').value,
-                phone: document.getElementById('v-phone').value,
-                province: document.getElementById('v-province').value,
-                vehicle_type: document.getElementById('v-type').value,
-                capacity: document.getElementById('v-cap').value,
-                image_url: document.getElementById('v-img').value || null
-            };
-
-            if (supabaseClient) {
-                const { error } = await supabaseClient.from('vehicles').insert([payload]);
-                if (error) { showToast('Lỗi Supabase: ' + error.message, 'error'); return; }
-            } else {
-                sampleData.vehicles.unshift({ id: Date.now(), ...payload });
-            }
-            showToast('Đã lưu nhà xe vào CSDL!', 'success');
-            e.target.reset();
-            renderVehicles();
-        }
-
-        async function handleAddTech(e) {
-            e.preventDefault();
-            const payload = {
-                name: document.getElementById('t-name').value,
-                phone: document.getElementById('t-phone').value,
-                province: document.getElementById('t-province').value,
-                district: document.getElementById('t-district').value,
-                skill: document.getElementById('t-skill').value,
-                description: document.getElementById('t-desc').value
-            };
-
-            if (supabaseClient) {
-                const { error } = await supabaseClient.from('technicians').insert([payload]);
-                if (error) { showToast('Lỗi Supabase: ' + error.message, 'error'); return; }
-            } else {
-                sampleData.technicians.unshift({ id: Date.now(), ...payload });
-            }
-            showToast('Đã thêm thợ kỹ thuật thành công!', 'success');
-            e.target.reset();
-            renderTechnicians();
-        }
-
-        async function handleAddSupplier(e) {
-            e.preventDefault();
-            const payload = {
-                shop_name: document.getElementById('s-name').value,
-                phone: document.getElementById('s-phone').value,
-                type: document.getElementById('s-type').value,
-                province: document.getElementById('s-province').value,
-                categories: document.getElementById('s-cats').value,
-                address: document.getElementById('s-address').value
-            };
-
-            if (supabaseClient) {
-                const { error } = await supabaseClient.from('suppliers').insert([payload]);
-                if (error) { showToast('Lỗi Supabase: ' + error.message, 'error'); return; }
-            } else {
-                sampleData.suppliers.unshift({ id: Date.now(), ...payload });
-            }
-            showToast('Đã lưu cửa hàng/nhà cung cấp mới!', 'success');
-            e.target.reset();
-            renderSuppliers();
         }
 
         async function handleAddPost(e) {
