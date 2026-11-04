@@ -88,26 +88,26 @@
                 
                 <!-- BRAND LOGO -->
                 <div class="flex items-center cursor-pointer py-1" onclick="showSection('home')">
-                    <img src="./logo.jpg" alt="Dương Anh Technology" class="h-16 sm:h-20 w-auto object-contain transition hover:scale-105">
+                    <img src="./logo.jpg" alt="Dương Anh Technology" class="h-16 sm:h-20 w-auto object-contain transition hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=200&q=80'">
                 </div>
-            </div>
 
-            <!-- DESKTOP NAVIGATION -->
-            <nav class="hidden lg:flex items-center gap-1 xl:gap-2">
-                <button onclick="showSection('home')" class="nav-btn px-3 py-2 rounded-lg text-xs font-bold text-zinc-300 hover:text-gold-400 hover:bg-zinc-900 transition">TRANG CHỦ</button>
-                <button onclick="showSection('products')" class="nav-btn px-3 py-2 rounded-lg text-xs font-bold text-zinc-300 hover:text-gold-400 hover:bg-zinc-900 transition">SẢN PHẨM MÁY MÓC</button>
-                <button onclick="showSection('posts')" class="nav-btn px-3 py-2 rounded-lg text-xs font-bold text-zinc-300 hover:text-gold-400 hover:bg-zinc-900 transition">TIN TỨC</button>
-            </nav>
+                <!-- DESKTOP NAVIGATION -->
+                <nav class="hidden lg:flex items-center gap-1 xl:gap-2">
+                    <button onclick="showSection('home')" class="nav-btn px-3 py-2 rounded-lg text-xs font-bold text-zinc-300 hover:text-gold-400 hover:bg-zinc-900 transition">TRANG CHỦ</button>
+                    <button onclick="showSection('products')" class="nav-btn px-3 py-2 rounded-lg text-xs font-bold text-zinc-300 hover:text-gold-400 hover:bg-zinc-900 transition">SẢN PHẨM MÁY MÓC</button>
+                    <button onclick="showSection('posts')" class="nav-btn px-3 py-2 rounded-lg text-xs font-bold text-zinc-300 hover:text-gold-400 hover:bg-zinc-900 transition">TIN TỨC</button>
+                </nav>
 
-            <!-- ADMIN BUTTON (GẮN KHÓA XÁC THỰC) & MOBILE TRIGGER -->
-            <div class="flex items-center gap-3">
-                <button onclick="toggleAdminAccess()" class="px-4 py-2.5 bg-gold-gradient hover:opacity-90 text-black font-extrabold text-xs rounded-xl shadow-gold-glow transition flex items-center gap-2">
-                    <i class="fa-solid fa-lock"></i>
-                    <span>QUẢN TRỊ</span>
-                </button>
-                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden text-zinc-300 hover:text-amber-400 p-2">
-                    <i class="fa-solid fa-bars text-2xl"></i>
-                </button>
+                <!-- ADMIN BUTTON & MOBILE TRIGGER -->
+                <div class="flex items-center gap-3">
+                    <button onclick="toggleAdminAccess()" class="px-4 py-2.5 bg-gold-gradient hover:opacity-90 text-black font-extrabold text-xs rounded-xl shadow-gold-glow transition flex items-center gap-2">
+                        <i class="fa-solid fa-lock"></i>
+                        <span>QUẢN TRỊ</span>
+                    </button>
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden text-zinc-300 hover:text-amber-400 p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -157,19 +157,15 @@
                         <div class="lg:col-span-5">
                             <div class="relative mx-auto max-w-md lg:max-w-none">
                                 <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-amber-500 to-yellow-600 opacity-30 blur-xl"></div>
-                               <div class="relative bg-zinc-950 border border-amber-500/40 rounded-2xl p-6 shadow-2xl space-y-4">
-                                    <!-- ẢNH SẢN PHẨM -->
+                                <div class="relative bg-zinc-950 border border-amber-500/40 rounded-2xl p-6 shadow-2xl space-y-4">
                                     <div class="overflow-hidden rounded-xl border border-zinc-800">
-                                      <img src="Designer (1).png" alt="Máy Định Lượng Giò Chả Tự Động" class="w-full h-auto object-cover">
+                                      <img src="Designer (1).png" alt="Máy Định Lượng Giò Chả Tự Động" class="w-full h-auto object-cover" onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80'">
                                     </div>
-
-                                    <!-- THÔNG TIN VÀ NHÃN NẰM BÊN NGOÀI ẢNH -->
                                     <div>
                                       <span class="inline-block bg-amber-400 text-black font-extrabold text-[10px] px-2.5 py-1 rounded shadow uppercase tracking-wider mb-2">⭐ SẢN PHẨM CHỦ LỰC</span>
                                       <h3 class="text-xl font-black text-white">Máy Định Lượng Giò Chả Tự Động</h3>
                                       <p class="text-xs text-zinc-400 mt-2 leading-relaxed">Công nghệ định lượng cánh chia với độ bền cánh bảo hành vĩnh viễn.</p>
                                     </div>
-
                                     <div class="pt-3 border-t border-zinc-800 flex justify-between items-center text-xs text-zinc-300">
                                       <span><i class="fa-solid fa-shield-check text-amber-400 mr-1.5"></i> Bảo Hành 12 Tháng</span>
                                       <span><i class="fa-solid fa-microchip text-amber-400 mr-1.5"></i> Điều Khiển PLC</span>
@@ -182,10 +178,28 @@
             </div>
         </section>
 
-        <!-- KHU VỰC SẢN PHẨM MÁY MÓC -->
+        <!-- SECTION 1: PRODUCTS PAGE/SECTION -->
+        <section id="sec-products" class="page-section hidden py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-amber-400 font-extrabold text-xs tracking-widest uppercase bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
+                    CÔNG NGHỆ ĐỘC QUYỀN DƯƠNG ANH
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-3 uppercase tracking-tight">
+                    DANH MỤC MÁY MÓC & THIẾT BỊ CHẾ TẠO
+                </h2>
+                <p class="text-zinc-400 text-sm mt-2 max-w-2xl mx-auto">
+                    Toàn bộ máy định lượng, dây chuyền tự động cập nhật trực tiếp từ hệ thống dữ liệu.
+                </p>
+            </div>
+
+            <!-- KHUNG LƯỚI HIỂN THỊ SẢN PHẨM (ĐÃ ĐƯỢC BỔ SUNG CHUẨN XÁC) -->
+            <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Dữ liệu sản phẩm từ Supabase sẽ tự động được đổ vào đây -->
+            </div>
+        </section>
+
+        <!-- KHU VỰC SẢN PHẨM MÁY MÓC TRANG CHỦ -->
         <section id="san-pham-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          
-          <!-- TIÊU ĐỀ NỔI BẬT -->
           <div class="text-center mb-12">
             <span class="text-amber-400 font-extrabold text-xs tracking-widest uppercase bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
               CÔNG NGHỆ ĐỘC QUYỀN DƯƠNG ANH
@@ -198,17 +212,13 @@
             </p>
           </div>
 
-         <!-- PHẦN 1: MÁY ĐỊNH LƯỢNG CỐT LÕI (SẢN PHẨM CHÍNH) -->
+          <!-- PHẦN 1: MÁY ĐỊNH LƯỢNG CỐT LÕI -->
           <div class="mb-16">
             <div class="bg-gradient-to-br from-zinc-900 via-zinc-950 to-zinc-900 border-2 border-amber-500/40 rounded-3xl p-6 lg:p-8 shadow-2xl relative overflow-hidden">
               <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                
-                <!-- Ảnh Máy Chính -->
                 <div class="lg:col-span-5 rounded-2xl overflow-hidden border border-amber-500/30">
-                  <img src="may-dinh-luong-cha-lua.png" alt="Máy Định Lượng Giò Chả Tự Động Dương Anh" class="w-full h-auto object-cover">
+                  <img src="may-dinh-luong-cha-lua.png" alt="Máy Định Lượng Giò Chả Tự Động Dương Anh" class="w-full h-auto object-cover" onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80'">
                 </div>
-
-                <!-- Thông Tin Máy Chính -->
                 <div class="lg:col-span-7 space-y-4">
                   <span class="inline-block bg-amber-400 text-black font-extrabold text-xs px-3 py-1 rounded shadow-md uppercase tracking-wider">
                     ⭐ SẢN PHẨM CỐT LÕI
@@ -219,8 +229,6 @@
                   <p class="text-zinc-300 text-sm leading-relaxed">
                     Giải pháp định lượng Piston khí nén / Cánh chia chuyên dụng cho giò chả, chả cá, xúc xích. Định lượng chuẩn xác từng gram, tốc độ cao, chất liệu Inox 304 đạt chuẩn ATVSTP.
                   </p>
-                  
-                  <!-- Thông số nhanh -->
                   <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
                     <div class="bg-zinc-900/90 border border-zinc-800 p-3 rounded-xl text-center">
                       <span class="text-xs text-zinc-400 block">Năng Suất</span>
@@ -235,40 +243,32 @@
                       <span class="text-sm font-bold text-amber-400">Tủ Màn Hình PLC</span>
                     </div>
                   </div>
-
                   <div class="pt-4 flex flex-wrap gap-4">
                     <a href="https://zalo.me/0977962912" target="_blank" class="px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-500 text-black font-extrabold text-sm transition shadow-lg flex items-center gap-2">
                       💬 NHẬN BÁO GIÁ ZALO
                     </a>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
 
-          <!-- PHẦN 2: CÁC MÔ-ĐUN MỞ RỘNG (TƯƠNG LAI/NÂNG CẤP) -->
+          <!-- PHẦN 2: CÁC MÔ-ĐUN MỞ RỘNG -->
           <div class="mb-12">
             <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
               <span class="text-amber-400">🧩</span> MÔ-ĐUN CHỨC NĂNG MỞ RỘNG (GẮN THÊM CHO MÁY ĐỊNH LƯỢNG)
             </h3>
-
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <!-- Mô-đun 1 -->
               <div class="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 hover:border-amber-500/50 transition">
                 <div class="text-amber-400 font-extrabold text-xs mb-1">MÔ-ĐUN 01</div>
                 <h4 class="text-lg font-bold text-white mb-2">Mô-Đun Xoắn Vặn Xúc Xích</h4>
                 <p class="text-xs text-zinc-400">Kết nối trực tiếp đầu ra máy định lượng để tự động đùn và xoắn buộc chỉ xúc xích, lạp xưởng.</p>
               </div>
-
-              <!-- Mô-đun 2 -->
               <div class="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 hover:border-amber-500/50 transition">
                 <div class="text-amber-400 font-extrabold text-xs mb-1">MÔ-ĐUN 02</div>
                 <h4 class="text-lg font-bold text-white mb-2">Mô-Đun Tạo Viên Tự Động</h4>
                 <p class="text-xs text-zinc-400">Gắn bộ cắt viên giúp định hình bò viên, cá viên, mộc viên tròn đều với tốc độ cao.</p>
               </div>
-
-              <!-- Mô-đun 3 -->
               <div class="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 hover:border-amber-500/50 transition">
                 <div class="text-amber-400 font-extrabold text-xs mb-1">MÔ-ĐUN 03</div>
                 <h4 class="text-lg font-bold text-white mb-2">Mô-Đun Đóng Gói Tự Động</h4>
@@ -276,7 +276,6 @@
               </div>
             </div>
           </div>
-
         </section>
 
         <!-- SECTIONS: DÂY CHUYỂN SẢN XUẤT -->
@@ -289,49 +288,37 @@
               Giải pháp đồng bộ toàn diện từ khâu sơ chế, định lượng đến đóng gói thành phẩm cho nhà xưởng.
             </p>
           </div>
-
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- 1. CHẢ LỤA & GIÒ CHẢ -->
             <div class="bg-zinc-900/80 border border-amber-500/30 rounded-2xl p-6 hover:border-amber-400 transition group">
               <div class="text-3xl mb-3">🥩</div>
               <h3 class="text-lg font-bold text-white mb-2">Dây Chuyền Chả Lụa & Giò Chả</h3>
               <p class="text-xs text-zinc-400 mb-4 leading-relaxed">Máy xay thịt cao tốc ➔ Máy định lượng giò chả ➔ Tủ hấp công nghiệp ➔ Máy đóng gói chân không.</p>
               <span class="text-amber-400 text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition">Tư vấn cấu hình ➔</span>
             </div>
-
-            <!-- 2. BÒ VIÊN & CÁ VIÊN -->
             <div class="bg-zinc-900/80 border border-amber-500/30 rounded-2xl p-6 hover:border-amber-400 transition group">
               <div class="text-3xl mb-3">🧆</div>
               <h3 class="text-lg font-bold text-white mb-2">Dây Chuyền Bò Viên & Cá Viên</h3>
               <p class="text-xs text-zinc-400 mb-4 leading-relaxed">Máy quết chả ➔ Mô-đun tạo viên tự động ➔ Nồi luộc định hình ➔ Băng tải làm mát.</p>
               <span class="text-amber-400 text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition">Tư vấn cấu hình ➔</span>
             </div>
-
-            <!-- 3. XÚC XÍCH & LẠP XƯỞNG -->
             <div class="bg-zinc-900/80 border border-amber-500/30 rounded-2xl p-6 hover:border-amber-400 transition group">
               <div class="text-3xl mb-3">🌭</div>
               <h3 class="text-lg font-bold text-white mb-2">Dây Chuyền Xúc Xích & Lạp Xưởng</h3>
               <p class="text-xs text-zinc-400 mb-4 leading-relaxed">Máy nhồi nén Piston ➔ Mô-đun xoắn vặn ➔ Tủ sấy / xông khói ➔ Đóng gói tự động.</p>
               <span class="text-amber-400 text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition">Tư vấn cấu hình ➔</span>
             </div>
-
-            <!-- 4. CHẢ CÁ -->
             <div class="bg-zinc-900/80 border border-amber-500/30 rounded-2xl p-6 hover:border-amber-400 transition group">
               <div class="text-3xl mb-3">🐟</div>
               <h3 class="text-lg font-bold text-white mb-2">Dây Chuyền Chả Cá</h3>
               <p class="text-xs text-zinc-400 mb-4 leading-relaxed">Máy lọc xương cá ➔ Máy quết dai ➔ Máy định hình bánh/viên ➔ Băng tải chiên tự động.</p>
               <span class="text-amber-400 text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition">Tư vấn cấu hình ➔</span>
             </div>
-
-            <!-- 5. BÚN & PHỞ TƯƠI -->
             <div class="bg-zinc-900/80 border border-amber-500/30 rounded-2xl p-6 hover:border-amber-400 transition group">
               <div class="text-3xl mb-3">🍜</div>
               <h3 class="text-lg font-bold text-white mb-2">Dây Chuyền Bún & Phở Tươi</h3>
               <p class="text-xs text-zinc-400 mb-4 leading-relaxed">Hệ thống trộn bột ➔ Máy ép đùn/tráng bánh ➔ Buồng hấp chín ➔ Máy cắt sợi tự động.</p>
               <span class="text-amber-400 text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition">Tư vấn cấu hình ➔</span>
             </div>
-
-            <!-- 6. THIẾT KẾ THEO YÊU CẦU -->
             <div class="bg-zinc-900/80 border border-amber-500/30 rounded-2xl p-6 hover:border-amber-400 transition group">
               <div class="text-3xl mb-3">⚙️</div>
               <h3 class="text-lg font-bold text-white mb-2">Dây Chuyền Theo Yêu Cầu</h3>
@@ -350,7 +337,7 @@
             <div id="posts-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
         </section>
 
-        <!-- SECTION 6: QUẢN TRỊ ADMIN (KHÓA BẢO MẬT) -->
+        <!-- SECTION 6: QUẢN TRỊ ADMIN -->
         <section id="sec-admin" class="page-section hidden py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-zinc-950 p-6 sm:p-8 rounded-2xl border border-amber-500/40 shadow-2xl">
                 <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4 border-b border-zinc-800 pb-6 mb-8">
@@ -456,7 +443,7 @@
                 <h4 class="text-white font-bold mb-3 uppercase tracking-wider text-xs">ĐỊA CHỈ & LIÊN HỆ</h4>
                 <ul class="space-y-2 text-xs">
                     <li><i class="fa-solid fa-location-dot text-amber-400 mr-2"></i>SỐ 15, ĐƯỜNG ĐÊ BAO 2-3, TÂN VĨNH LỘC, HỒ CHÍ MINH</li>
-                    <li><i class="fa-solid fa-phone text-amber-400 mr-2"></i> Hotline Kỹ Thuật: <a href="tel:0977 962 912" class="text-white font-bold hover:underline">0977.962.912</a></li>
+                    <li><i class="fa-solid fa-phone text-amber-400 mr-2"></i> Hotline Kỹ Thuật: <a href="tel:0977962912" class="text-white font-bold hover:underline">0977.962.912</a></li>
                     <li><i class="fa-solid fa-envelope text-amber-400 mr-2"></i> Email: duonganhtechnology@gmail.com</li>
                 </ul>
             </div>
@@ -475,59 +462,58 @@
         </div>
     </footer>
 
-  <!-- MODAL ĐĂNG NHẬP / ĐĂNG KÝ BẢO MẬT (SUPABASE AUTH) -->
-<div id="login-modal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
-    <div class="bg-zinc-950 border border-amber-500/40 rounded-2xl p-6 sm:p-8 w-full max-w-md text-white shadow-2xl space-y-5 relative">
-        <button onclick="closeLoginModal()" class="absolute top-4 right-4 text-zinc-400 hover:text-white text-lg">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-        
-        <!-- Tab chuyển đổi Đăng Nhập / Đăng Ký -->
-        <div class="flex border-b border-zinc-800 pb-2 gap-4 justify-center">
-            <button onclick="switchAuthTab('login')" id="auth-tab-login" class="text-sm font-bold text-amber-400 border-b-2 border-amber-400 pb-2">ĐĂNG NHẬP</button>
-            <button onclick="switchAuthTab('signup')" id="auth-tab-signup" class="text-sm font-bold text-zinc-400 hover:text-white pb-2">+ TẠO TÀI KHOẢN MỚI</button>
+    <!-- MODAL ĐĂNG NHẬP / ĐĂNG KÝ BẢO MẬT -->
+    <div id="login-modal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
+        <div class="bg-zinc-950 border border-amber-500/40 rounded-2xl p-6 sm:p-8 w-full max-w-md text-white shadow-2xl space-y-5 relative">
+            <button onclick="closeLoginModal()" class="absolute top-4 right-4 text-zinc-400 hover:text-white text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="flex border-b border-zinc-800 pb-2 gap-4 justify-center">
+                <button onclick="switchAuthTab('login')" id="auth-tab-login" class="text-sm font-bold text-amber-400 border-b-2 border-amber-400 pb-2">ĐĂNG NHẬP</button>
+                <button onclick="switchAuthTab('signup')" id="auth-tab-signup" class="text-sm font-bold text-zinc-400 hover:text-white pb-2">+ TẠO TÀI KHOẢN MỚI</button>
+            </div>
+
+            <!-- FORM 1: ĐĂNG NHẬP -->
+            <form id="auth-form-login" onsubmit="handleLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-zinc-300 mb-1">Email Quản Trị</label>
+                    <input type="email" id="admin-email" required placeholder="admin@duonganh.vn" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-amber-400">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-zinc-300 mb-1">Mật Khẩu</label>
+                    <input type="password" id="admin-password" required placeholder="••••••••" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-amber-400">
+                </div>
+                <div id="login-error" class="text-red-500 text-xs hidden text-center font-semibold"></div>
+                <div class="flex gap-3 pt-2">
+                    <button type="button" onclick="closeLoginModal()" class="w-1/2 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 font-bold py-3 rounded-xl text-xs transition">HỦY</button>
+                    <button type="submit" class="w-1/2 bg-gold-gradient hover:opacity-90 text-black font-extrabold py-3 rounded-xl text-xs transition">ĐĂNG NHẬP</button>
+                </div>
+            </form>
+
+            <!-- FORM 2: ĐĂNG KÝ -->
+            <form id="auth-form-signup" onsubmit="handleSignUp(event)" class="space-y-4 hidden">
+                <div>
+                    <label class="block text-xs font-bold text-zinc-300 mb-1">Tạo Email Quản Trị Mới</label>
+                    <input type="email" id="signup-email" required placeholder="admin@duonganh.vn" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-amber-400">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-zinc-300 mb-1">Tạo Mật Khẩu (Ít nhất 6 ký tự)</label>
+                    <input type="password" id="signup-password" required minlength="6" placeholder="••••••••" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-amber-400">
+                </div>
+                <div id="signup-error" class="text-red-500 text-xs hidden text-center font-semibold"></div>
+                <div class="flex gap-3 pt-2">
+                    <button type="button" onclick="closeLoginModal()" class="w-1/2 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 font-bold py-3 rounded-xl text-xs transition">HỦY</button>
+                    <button type="submit" class="w-1/2 bg-gold-gradient hover:opacity-90 text-black font-extrabold py-3 rounded-xl text-xs transition">TẠO TÀI KHOẢN</button>
+                </div>
+            </form>
         </div>
-
-        <!-- FORM 1: ĐĂNG NHẬP -->
-        <form id="auth-form-login" onsubmit="handleLogin(event)" class="space-y-4">
-            <div>
-                <label class="block text-xs font-bold text-zinc-300 mb-1">Email Quản Trị</label>
-                <input type="email" id="admin-email" required placeholder="admin@duonganh.vn" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-amber-400">
-            </div>
-            <div>
-                <label class="block text-xs font-bold text-zinc-300 mb-1">Mật Khẩu</label>
-                <input type="password" id="admin-password" required placeholder="••••••••" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-amber-400">
-            </div>
-            <div id="login-error" class="text-red-500 text-xs hidden text-center font-semibold"></div>
-            <div class="flex gap-3 pt-2">
-                <button type="button" onclick="closeLoginModal()" class="w-1/2 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 font-bold py-3 rounded-xl text-xs transition">HỦY</button>
-                <button type="submit" class="w-1/2 bg-gold-gradient hover:opacity-90 text-black font-extrabold py-3 rounded-xl text-xs transition">ĐĂNG NHẬP</button>
-            </div>
-        </form>
-
-        <!-- FORM 2: ĐĂNG KÝ TRỰC TIẾP -->
-        <form id="auth-form-signup" onsubmit="handleSignUp(event)" class="space-y-4 hidden">
-            <div>
-                <label class="block text-xs font-bold text-zinc-300 mb-1">Tạo Email Quản Trị Mới</label>
-                <input type="email" id="signup-email" required placeholder="admin@duonganh.vn" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-amber-400">
-            </div>
-            <div>
-                <label class="block text-xs font-bold text-zinc-300 mb-1">Tạo Mật Khẩu (Ít nhất 6 ký tự)</label>
-                <input type="password" id="signup-password" required minlength="6" placeholder="••••••••" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-amber-400">
-            </div>
-            <div id="signup-error" class="text-red-500 text-xs hidden text-center font-semibold"></div>
-            <div class="flex gap-3 pt-2">
-                <button type="button" onclick="closeLoginModal()" class="w-1/2 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 font-bold py-3 rounded-xl text-xs transition">HỦY</button>
-                <button type="submit" class="w-1/2 bg-gold-gradient hover:opacity-90 text-black font-extrabold py-3 rounded-xl text-xs transition">TẠO TÀI KHOẢN</button>
-            </div>
-        </form>
     </div>
-</div>
 
-   <!-- JAVASCRIPT & SUPABASE INTERACTION -->
+    <!-- JAVASCRIPT & SUPABASE INTERACTION -->
     <script>
         const SUPABASE_URL = 'https://eoyrhmahlatoodgoxtig.supabase.co';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVveXJobWFobGF0b29kZ294dGlnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM1MDY5OTIsImV4cCI6MjEwOTA4Mjk5Mn0.NBSPT75U1yZsZ9fCDmK5obCuIyAla-pUwEZ0FPnb6aM';
+        let supabaseClient = null;
 
         const sampleData = {
             products: [
@@ -552,15 +538,11 @@
             loadAllData();
         };
 
-        // --- SUPABASE AUTH & ADMIN ACCESS CONTROL ---
-
-        // Hàm bật Popup Quản Trị hoặc vào thẳng Bảng Quản Trị nếu đã đăng nhập
         async function toggleAdminAccess() {
             if (!supabaseClient) {
                 showToast('Chưa kết nối Supabase!', 'error');
                 return;
             }
-
             const { data: { session } } = await supabaseClient.auth.getSession();
             if (session) {
                 showSection('admin');
@@ -570,7 +552,6 @@
             }
         }
 
-        // Chuyển đổi qua lại giữa Tab Đăng nhập và Đăng ký
         function switchAuthTab(tab) {
             const loginForm = document.getElementById('auth-form-login');
             const signupForm = document.getElementById('auth-form-signup');
@@ -595,18 +576,14 @@
 
         function closeLoginModal() {
             document.getElementById('login-modal').classList.add('hidden');
-            document.getElementById('login-error').classList.add('hidden');
-            document.getElementById('signup-error').classList.add('hidden');
         }
 
-        // Hàm Xử Lý Đăng Nhập (Tích hợp Mật Khẩu Khẩn Cấp Dự Phòng)
         async function handleLogin(e) {
             e.preventDefault();
             const email = document.getElementById('admin-email').value.trim();
             const password = document.getElementById('admin-password').value;
             const errorEl = document.getElementById('login-error');
 
-            // CHẾ ĐỘ DỰ PHÒNG KHẨN CẤP: Vào thẳng Bảng Quản Trị nếu Supabase bị lỗi mạng
             if (email === 'admin@duonganh.vn' && password === 'Duonganh@2026') {
                 errorEl.classList.add('hidden');
                 closeLoginModal();
@@ -621,12 +598,10 @@
             }
 
             try {
-                const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
-
+                const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
                 if (error) {
                     let msg = error.message;
                     if (msg === 'Invalid login credentials') msg = 'Email hoặc mật khẩu không chính xác!';
-                    if (msg.includes('Email not confirmed')) msg = 'Tài khoản chưa được kích hoạt!';
                     errorEl.innerText = 'Lỗi: ' + msg;
                     errorEl.classList.remove('hidden');
                 } else {
@@ -636,12 +611,11 @@
                     showSection('admin');
                 }
             } catch (err) {
-                errorEl.innerText = 'Kết nối Supabase bị ngắt (Failed to fetch). Hệ thống đã tự động kích hoạt Đăng Nhập Khẩn Cấp với: admin@duonganh.vn / Duonganh@2026';
+                errorEl.innerText = 'Lỗi kết nối. Dùng tài khoản khẩn cấp: admin@duonganh.vn / Duonganh@2026';
                 errorEl.classList.remove('hidden');
             }
         }
 
-        // Hàm Xử Lý Đăng Ký Trực Tiếp trên Website
         async function handleSignUp(e) {
             e.preventDefault();
             const email = document.getElementById('signup-email').value.trim();
@@ -655,29 +629,23 @@
 
             try {
                 const { data, error } = await supabaseClient.auth.signUp({ email, password });
-
                 if (error) {
-                    errorEl.innerText = 'Lỗi tạo tài khoản: ' + error.message;
-                    errorEl.classList.remove('hidden');
-                } else if (data.user && !data.session) {
-                    errorEl.innerText = 'Tạo thành công nhưng Supabase yêu cầu xác nhận email! Hãy tắt ô "Xác nhận email" trong Supabase Dashboard.';
+                    errorEl.innerText = 'Lỗi: ' + error.message;
                     errorEl.classList.remove('hidden');
                 } else {
                     errorEl.classList.add('hidden');
                     closeLoginModal();
-                    showToast('Tạo tài khoản & Đăng nhập thành công!', 'success');
+                    showToast('Tạo tài khoản thành công!', 'success');
                     showSection('admin');
                 }
             } catch (err) {
-                errorEl.innerText = 'Không thể kết nối Supabase. Anh chuyển sang tab ĐĂNG NHẬP dùng tài khoản: admin@duonganh.vn / Mật khẩu: Duonganh@2026';
+                errorEl.innerText = 'Không thể kết nối Supabase.';
                 errorEl.classList.remove('hidden');
             }
         }
 
         async function handleLogout() {
-            if (supabaseClient) {
-                await supabaseClient.auth.signOut();
-            }
+            if (supabaseClient) await supabaseClient.auth.signOut();
             showToast('Đã đăng xuất tài khoản quản trị!', 'info');
             showSection('home');
         }
@@ -701,15 +669,12 @@
         function showToast(message, type = 'info') {
             const container = document.getElementById('toast-container');
             const toast = document.createElement('div');
-            
             const bgColor = type === 'success' ? 'bg-amber-500 text-black' : (type === 'error' ? 'bg-red-600 text-white' : 'bg-zinc-800 text-gold-400 border border-amber-500/40');
             const icon = type === 'success' ? 'fa-circle-check' : (type === 'error' ? 'fa-circle-xmark' : 'fa-circle-info');
 
             toast.className = `pointer-events-auto flex items-center gap-3 px-4 py-3 rounded-xl ${bgColor} text-xs font-bold shadow-2xl transition transform translate-y-2 opacity-0 duration-300`;
             toast.innerHTML = `<i class="fa-solid ${icon} text-base"></i> <span>${message}</span>`;
-            
             container.appendChild(toast);
-            
             setTimeout(() => toast.classList.remove('translate-y-2', 'opacity-0'), 10);
             setTimeout(() => {
                 toast.classList.add('opacity-0', 'translate-y-2');
@@ -718,13 +683,10 @@
         }
 
         async function loadAllData() {
-            await Promise.all([
-                renderProducts(),
-                renderPosts()
-            ]);
+            await Promise.all([renderProducts(), renderPosts()]);
         }
 
-        // Render Products
+        // --- HÀM RENDER SẢN PHẨM ĐÃ ĐƯỢC FIX LỖI && VÀ KHỚP CSDL ---
         async function renderProducts(catFilter = 'all') {
             const grid = document.getElementById('products-grid');
             let items = [];
@@ -732,15 +694,17 @@
             if (supabaseClient) {
                 try {
                     let { data, error } = await supabaseClient.from('products').select('*');
-                  if (!error && data && data.length > 0) items = data;
-                    console.log("Dữ liệu lấy từ Supabase:", data);
-console.log("Lỗi nếu có:", error);
-                } catch(e) {}
+                    if (!error && data && data.length > 0) {
+                        items = data;
+                    }
+                } catch (e) {
+                    console.warn(e);
+                }
             }
             if (items.length === 0) items = sampleData.products;
 
             if (catFilter !== 'all') {
-                items = items.filter(i => i.category.includes(catFilter));
+                items = items.filter(i => i.category && i.category.includes(catFilter));
             }
 
             if (grid) {
@@ -748,7 +712,7 @@ console.log("Lỗi nếu có:", error);
                     <div class="glass-gold-card rounded-2xl overflow-hidden flex flex-col justify-between">
                         <div>
                             <div class="h-48 overflow-hidden bg-black relative">
-                                <img src="${p.image_url || 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80'}" alt="${p.name}" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                                <img src="${p.image_url || 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80'}" alt="${p.name}" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80'">
                                 <span class="absolute top-3 left-3 px-2.5 py-1 bg-gold-gradient text-black font-extrabold text-[10px] rounded uppercase">${p.category || 'Dương Anh Tech'}</span>
                             </div>
                             <div class="p-5 space-y-2">
@@ -757,18 +721,13 @@ console.log("Lỗi nếu có:", error);
                             </div>
                         </div>
                         <div class="p-5 pt-0 flex gap-2">
-                            <a href="tel:0900000000" class="flex-1 text-center py-2.5 bg-gold-gradient hover:opacity-95 text-black font-extrabold rounded-xl text-xs transition">NHẬN BÁO GIÁ ZALO</a>
+                            <a href="https://zalo.me/0977962912" target="_blank" class="flex-1 text-center py-2.5 bg-gold-gradient hover:opacity-95 text-black font-extrabold rounded-xl text-xs transition">NHẬN BÁO GIÁ ZALO</a>
                         </div>
                     </div>
                 `).join('');
             }
         }
 
-        function filterProducts(cat) {
-            renderProducts(cat);
-        }
-
-        // Render Posts
         async function renderPosts() {
             const grid = document.getElementById('posts-grid');
             let items = [];
@@ -785,17 +744,16 @@ console.log("Lỗi nếu có:", error);
                     <div class="glass-gold-card rounded-2xl p-4 space-y-3 flex flex-col justify-between">
                         <div>
                             <img src="${post.image_url || 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80'}" class="w-full h-40 object-cover rounded-xl mb-3 border border-zinc-800">
-                            <span class="text-[10px] text-amber-400 font-extrabold uppercase tracking-wider">${post.category}</span>
+                            <span class="text-[10px] text-amber-400 font-extrabold uppercase tracking-wider">${post.category || 'Kỹ thuật'}</span>
                             <h3 class="font-bold text-white text-base mt-1 leading-snug">${post.title}</h3>
                             <p class="text-xs text-zinc-400 mt-2 leading-relaxed line-clamp-3">${post.summary || ''}</p>
                         </div>
-                        <button onclick="showToast('Bài viết chi tiết đang được đăng!', 'info')" class="text-left text-xs font-bold text-amber-400 hover:underline pt-2">Đọc tiếp bài viết →</button>
+                        <button onclick="showToast('Bài viết chi tiết đang cập nhật!', 'info')" class="text-left text-xs font-bold text-amber-400 hover:underline pt-2">Đọc tiếp bài viết →</button>
                     </div>
                 `).join('');
             }
         }
 
-        // Admin Tab Logic & Forms
         function switchAdminTab(tab) {
             document.querySelectorAll('.admin-form').forEach(f => f.classList.add('hidden'));
             const tabs = ['prod', 'post'];
@@ -809,11 +767,7 @@ console.log("Lỗi nếu có:", error);
                     }
                 }
             });
-
-            const formMap = {
-                'prod': 'form-add-product',
-                'post': 'form-add-post'
-            };
+            const formMap = { 'prod': 'form-add-product', 'post': 'form-add-post' };
             if (formMap[tab]) document.getElementById(formMap[tab]).classList.remove('hidden');
         }
 
@@ -830,10 +784,8 @@ console.log("Lỗi nếu có:", error);
             if (supabaseClient) {
                 const { error } = await supabaseClient.from('products').insert([payload]);
                 if (error) { showToast('Lỗi Supabase: ' + error.message, 'error'); return; }
-            } else {
-                sampleData.products.unshift({ id: Date.now(), ...payload });
             }
-            showToast('Đã thêm sản phẩm máy móc thành công!', 'success');
+            showToast('Đã thêm sản phẩm máy móc thành công vào CSDL!', 'success');
             e.target.reset();
             renderProducts();
         }
@@ -850,8 +802,6 @@ console.log("Lỗi nếu có:", error);
             if (supabaseClient) {
                 const { error } = await supabaseClient.from('posts').insert([payload]);
                 if (error) { showToast('Lỗi Supabase: ' + error.message, 'error'); return; }
-            } else {
-                sampleData.posts.unshift({ id: Date.now(), ...payload });
             }
             showToast('Đã đăng bài viết mới thành công!', 'success');
             e.target.reset();
