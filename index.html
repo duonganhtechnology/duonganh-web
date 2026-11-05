@@ -806,7 +806,7 @@
 
             document.getElementById('detail-post-cat').innerText = post.category || 'Kỹ thuật';
             document.getElementById('detail-post-title').innerText = post.title || '';
-            document.getElementById('detail-post-content').innerText = post.content || post.summary || 'Nội dung chi tiết đang cập nhật...';
+            document.getElementById('detail-post-content').innerHTML = post.content || post.summary || 'Nội dung chi tiết đang cập nhật...';
 
             const imgContainer = document.getElementById('detail-post-image-container');
             const imgEl = document.getElementById('detail-post-img');
