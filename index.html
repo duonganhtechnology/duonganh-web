@@ -334,26 +334,28 @@
             </div>
             <div id="posts-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
         </section>
-<!-- SECTION: TRANG ĐỌC CHI TIẾT BÀI VIẾT -->
-<section id="sec-post-detail" class="page-section hidden py-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <button onclick="showSection('posts')" class="mb-6 px-4 py-2 bg-zinc-900 border border-zinc-800 text-amber-400 rounded-xl text-xs font-bold flex items-center gap-2 hover:bg-zinc-800 transition">
-        <i class="fa-solid fa-arrow-left"></i> Quay lại danh sách tin tức
-    </button>
-    <div class="bg-zinc-950 border border-amber-500/30 rounded-3xl p-6 sm:p-10 shadow-2xl space-y-6">
-        <span id="detail-post-cat" class="inline-block bg-amber-500/10 border border-amber-500/30 text-amber-400 font-extrabold text-[10px] px-3 py-1 rounded-full uppercase tracking-wider"></span>
-        <h1 id="detail-post-title" class="text-2xl sm:text-4xl font-black text-white leading-tight"></h1>
-        <div id="detail-post-image-container" class="rounded-2xl overflow-hidden border border-zinc-800 max-h-[400px]">
-            <img id="detail-post-img" src="" alt="" class="w-full h-full object-cover">
-        </div>
-        <div class="border-t border-zinc-800 pt-6">
-            <div id="detail-post-content" class="text-sm sm:text-base text-zinc-300 leading-relaxed whitespace-pre-line space-y-4"></div>
-        </div>
-        <div class="pt-6 border-t border-zinc-800 flex justify-between items-center">
-            <span class="text-xs text-zinc-500">Được chia sẻ bởi Dương Anh Technology</span>
-            <a href="https://zalo.me/0977962912" target="_blank" class="px-5 py-2.5 bg-gold-gradient text-black font-extrabold text-xs rounded-xl shadow-lg">TƯ VẤN KỸ THUẬT ZALO</a>
-        </div>
-    </div>
-</section>
+
+        <!-- SECTION: TRANG ĐỌC CHI TIẾT BÀI VIẾT RIÊNG BIỆT -->
+        <section id="sec-post-detail" class="page-section hidden py-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <button onclick="showSection('posts')" class="mb-6 px-4 py-2 bg-zinc-900 border border-zinc-800 text-amber-400 rounded-xl text-xs font-bold flex items-center gap-2 hover:bg-zinc-800 transition shadow">
+                <i class="fa-solid fa-arrow-left"></i> Quay lại danh sách tin tức
+            </button>
+            <div class="bg-zinc-950 border border-amber-500/30 rounded-3xl p-6 sm:p-10 shadow-2xl space-y-6">
+                <span id="detail-post-cat" class="inline-block bg-amber-500/10 border border-amber-500/30 text-amber-400 font-extrabold text-[10px] px-3 py-1 rounded-full uppercase tracking-wider"></span>
+                <h1 id="detail-post-title" class="text-2xl sm:text-4xl font-black text-white leading-tight"></h1>
+                <div id="detail-post-image-container" class="rounded-2xl overflow-hidden border border-zinc-800 max-h-[450px]">
+                    <img id="detail-post-img" src="" alt="" class="w-full h-full object-cover">
+                </div>
+                <div class="border-t border-zinc-800 pt-6">
+                    <div id="detail-post-content" class="text-sm sm:text-base text-zinc-300 leading-relaxed whitespace-pre-line space-y-4"></div>
+                </div>
+                <div class="pt-6 border-t border-zinc-800 flex flex-col sm:flex-row justify-between items-center gap-4">
+                    <span class="text-xs text-zinc-500">Được biên soạn bởi Kỹ sư Dương Anh - Dương Anh Technology</span>
+                    <a href="https://zalo.me/0977962912" target="_blank" class="px-6 py-3 bg-gold-gradient text-black font-extrabold text-xs rounded-xl shadow-lg hover:opacity-95 transition">💬 TƯ VẤN KỸ THUẬT QUA ZALO</a>
+                </div>
+            </div>
+        </section>
+
         <!-- SECTION 6: QUẢN TRỊ ADMIN -->
         <section id="sec-admin" class="page-section hidden py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-zinc-950 p-6 sm:p-8 rounded-2xl border border-amber-500/40 shadow-2xl">
@@ -436,12 +438,12 @@
                         </div>
                     </div>
                     <div>
-                        <label class="block text-xs text-zinc-400 mb-1">Nội Dung Tóm Tắt</label>
-                        <textarea id="post-summary" rows="2" placeholder="Tóm tắt nội dung bài viết..." class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm text-white"></textarea>
+                        <label class="block text-xs text-zinc-400 mb-1">Nội Dung Tóm Tắt (Hiển thị ngoài trang danh sách)</label>
+                        <textarea id="post-summary" rows="2" placeholder="Tóm tắt ngắn gọn..." class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm text-white"></textarea>
                     </div>
                     <div>
                         <label class="block text-xs text-zinc-400 mb-1">Nội Dung Chi Tiết (Bài viết hướng dẫn đầy đủ)</label>
-                        <textarea id="post-content" rows="5" placeholder="Nội dung chi tiết..." class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm text-white"></textarea>
+                        <textarea id="post-content" rows="6" placeholder="Nội dung chi tiết các bước vệ sinh, vận hành..." class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm text-white"></textarea>
                     </div>
                     <button type="submit" class="px-6 py-3 bg-gold-gradient hover:opacity-90 text-black font-extrabold rounded-xl text-xs transition">ĐĂNG BÀI VIẾT</button>
                 </form>
@@ -530,28 +532,12 @@
         </div>
     </div>
 
-    <!-- MODAL XEM CHI TIẾT BÀI VIẾT -->
-    <div id="post-modal" class="hidden fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center p-4">
-        <div class="bg-zinc-950 border border-amber-500/40 rounded-3xl p-6 sm:p-8 w-full max-w-2xl text-white shadow-2xl space-y-5 relative max-h-[90vh] overflow-y-auto">
-            <button onclick="closePostModal()" class="absolute top-4 right-4 text-zinc-400 hover:text-white text-xl bg-zinc-900 w-10 h-10 rounded-full flex items-center justify-center border border-zinc-800">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <span id="modal-post-cat" class="inline-block bg-amber-500/10 border border-amber-500/30 text-amber-400 font-extrabold text-[10px] px-3 py-1 rounded-full uppercase tracking-wider"></span>
-            <h2 id="modal-post-title" class="text-xl sm:text-2xl font-black text-white leading-snug"></h2>
-            <div class="border-t border-zinc-800 pt-4">
-                <p id="modal-post-content" class="text-sm text-zinc-300 leading-relaxed whitespace-pre-line"></p>
-            </div>
-            <div class="pt-4 border-t border-zinc-800 text-right">
-                <button onclick="closePostModal()" class="px-6 py-2.5 bg-gold-gradient text-black font-extrabold text-xs rounded-xl">ĐÓNG BÀI VIẾT</button>
-            </div>
-        </div>
-    </div>
-
     <!-- JAVASCRIPT & SUPABASE INTERACTION -->
     <script>
         const SUPABASE_URL = 'https://eoyrhmahlatoodgoxtig.supabase.co';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVveXJobWFobGF0b29kZ294dGlnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM1MDY5OTIsImV4cCI6MjEwOTA4Mjk5Mn0.NBSPT75U1yZsZ9fCDmK5obCuIyAla-pUwEZ0FPnb6aM';
         let supabaseClient = null;
+        let allPostsCache = [];
 
         const sampleData = {
             products: [
@@ -572,7 +558,14 @@
                 console.warn('Supabase loading notice:', err);
             }
 
-            showSection('home');
+            // Kiểm tra xem trên URL có yêu cầu mở bài viết cụ thể không (VD: #post-1)
+            const hash = window.location.hash;
+            if (hash.startsWith('#post-')) {
+                const postId = hash.replace('#post-', '');
+                loadAndOpenPost(postId);
+            } else {
+                showSection('home');
+            }
             loadAllData();
         };
 
@@ -775,6 +768,8 @@
                 } catch(e) {}
             }
             if (items.length === 0) items = sampleData.posts;
+            
+            allPostsCache = items; // Lưu cache để khi bấm xem chi tiết không cần gọi lại CSDL
 
             if (grid) {
                 grid.innerHTML = items.map(post => `
@@ -785,9 +780,45 @@
                             <h3 class="font-bold text-white text-base mt-1 leading-snug">${post.title}</h3>
                             <p class="text-xs text-zinc-400 mt-2 leading-relaxed line-clamp-3">${post.summary || ''}</p>
                         </div>
-                        <button onclick="openPostModalFromEl(this)" data-title="${post.title || ''}" data-category="${post.category || 'Kỹ thuật'}" data-content="${encodeURIComponent(post.content || post.summary || 'Nội dung chi tiết đang cập nhật!')}" class="text-left text-xs font-bold text-amber-400 hover:underline pt-2">Đọc tiếp bài viết →</button>
+                        <button onclick="openPostDetail('${post.id}')" class="text-left text-xs font-bold text-amber-400 hover:underline pt-2">Đọc tiếp bài viết →</button>
+                    </div>
                 `).join('');
             }
+        }
+
+        function openPostDetail(postId) {
+            let post = allPostsCache.find(p => p.id == postId);
+            if (!post) {
+                post = sampleData.posts[0];
+            }
+
+            document.getElementById('detail-post-cat').innerText = post.category || 'Kỹ thuật';
+            document.getElementById('detail-post-title').innerText = post.title || '';
+            document.getElementById('detail-post-content').innerText = post.content || post.summary || 'Nội dung chi tiết đang cập nhật...';
+
+            const imgEl = document.getElementById('detail-post-img');
+            if (post.image_url) {
+                imgEl.src = post.image_url;
+                imgEl.parentElement.classList.remove('hidden');
+            } else {
+                imgEl.parentElement.classList.add('hidden');
+            }
+
+            window.location.hash = 'post-' + postId;
+            showSection('post-detail');
+        }
+
+        async function loadAndOpenPost(postId) {
+            // Trường hợp khách truy cập trực tiếp từ link chia sẻ
+            let items = sampleData.posts;
+            if (supabaseClient) {
+                try {
+                    let { data } = await supabaseClient.from('posts').select('*');
+                    if (data && data.length > 0) items = data;
+                } catch(e) {}
+            }
+            allPostsCache = items;
+            openPostDetail(postId);
         }
 
         function switchAdminTab(tab) {
@@ -855,53 +886,6 @@
             dlAnchor.remove();
             showToast('Đã xuất file dữ liệu dự phòng về máy!', 'success');
         }
-
-        function openPostModal(title, category, content) {
-            document.getElementById('modal-post-title').innerText = title;
-            document.getElementById('modal-post-cat').innerText = category;
-            document.getElementById('modal-post-content').innerText = content;
-            document.getElementById('post-modal').classList.remove('hidden');
-        }
-
-        function closePostModal() {
-            document.getElementById('post-modal').classList.add('hidden');
-        }
-        function openPostModalFromEl(btn) {
-    const title = btn.getAttribute('data-title');
-    const category = btn.getAttribute('data-category');
-    const content = decodeURIComponent(btn.getAttribute('data-content'));
-
-    document.getElementById('modal-post-title').innerText = title;
-    document.getElementById('modal-post-cat').innerText = category;
-    document.getElementById('modal-post-content').innerText = content;
-    document.getElementById('post-modal').classList.remove('hidden');
-}
-
-function closePostModal() {
-    document.getElementById('post-modal').classList.add('hidden');
-}
-        let allPostsCache = [];
-
-// Trong hàm renderPosts, trước khi map giao diện, anh gán:
-// allPostsCache = items;
-
-function openPostDetail(postId) {
-    const post = allPostsCache.find(p => p.id == postId) || sampleData.posts[0];
-    
-    document.getElementById('detail-post-cat.innerText = post.category || 'Kỹ thuật';
-    document.getElementById('detail-post-title').innerText = post.title || '';
-    document.getElementById('detail-post-content').innerText = post.content || post.summary || 'Nội dung đang cập nhật...';
-    
-    const imgEl = document.getElementById('detail-post-img');
-    if (post.image_url) {
-        imgEl.src = post.image_url;
-        imgEl.parentElement.classList.remove('hidden');
-    } else {
-        imgEl.parentElement.classList.add('hidden');
-    }
-
-    showSection('post-detail');
-}
     </script>
 </body>
 </html>
