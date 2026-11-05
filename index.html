@@ -796,12 +796,14 @@
             document.getElementById('detail-post-title').innerText = post.title || '';
             document.getElementById('detail-post-content').innerText = post.content || post.summary || 'Nội dung chi tiết đang cập nhật...';
 
+            const imgContainer = document.getElementById('detail-post-image-container');
             const imgEl = document.getElementById('detail-post-img');
-            if (post.image_url) {
+            
+            if (post.image_url && post.image_url.trim() !== '') {
                 imgEl.src = post.image_url;
-                imgEl.parentElement.classList.remove('hidden');
+                imgContainer.classList.remove('hidden');
             } else {
-                imgEl.parentElement.classList.add('hidden');
+                imgContainer.classList.add('hidden');
             }
 
             window.location.hash = 'post-' + postId;
