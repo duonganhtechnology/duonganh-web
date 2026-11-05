@@ -44,7 +44,6 @@
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
         h1, h2, h3, h4, .font-brand { font-family: 'Montserrat', sans-serif; }
-        
         .text-gold-gradient {
             background: linear-gradient(135deg, #FFE259 0%, #FFA751 100%);
             -webkit-background-clip: text;
@@ -77,7 +76,6 @@
     </style>
 </head>
 <body class="bg-dark-base text-zinc-100 min-h-screen flex flex-col justify-between selection:bg-gold-500 selection:text-black">
-
     <!-- Toast Notification Container -->
     <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
 
@@ -192,7 +190,7 @@
                 </p>
             </div>
 
-            <!-- KHUNG LƯỚI HIỂN THỊ SẢN PHẨM (ĐÃ ĐƯỢC BỔ SUNG CHUẨN XÁC) -->
+            <!-- KHUNG LƯỚI HIỂN THỊ SẢN PHẨM -->
             <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Dữ liệu sản phẩm từ Supabase sẽ tự động được đổ vào đây -->
             </div>
@@ -422,6 +420,10 @@
                         <label class="block text-xs text-zinc-400 mb-1">Nội Dung Tóm Tắt</label>
                         <textarea id="post-summary" rows="2" placeholder="Tóm tắt nội dung bài viết..." class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm text-white"></textarea>
                     </div>
+                    <div>
+                        <label class="block text-xs text-zinc-400 mb-1">Nội Dung Chi Tiết (Bài viết hướng dẫn đầy đủ)</label>
+                        <textarea id="post-content" rows="5" placeholder="Nội dung chi tiết..." class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm text-white"></textarea>
+                    </div>
                     <button type="submit" class="px-6 py-3 bg-gold-gradient hover:opacity-90 text-black font-extrabold rounded-xl text-xs transition">ĐĂNG BÀI VIẾT</button>
                 </form>
             </div>
@@ -509,6 +511,23 @@
         </div>
     </div>
 
+    <!-- MODAL XEM CHI TIẾT BÀI VIẾT -->
+    <div id="post-modal" class="hidden fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center p-4">
+        <div class="bg-zinc-950 border border-amber-500/40 rounded-3xl p-6 sm:p-8 w-full max-w-2xl text-white shadow-2xl space-y-5 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closePostModal()" class="absolute top-4 right-4 text-zinc-400 hover:text-white text-xl bg-zinc-900 w-10 h-10 rounded-full flex items-center justify-center border border-zinc-800">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <span id="modal-post-cat" class="inline-block bg-amber-500/10 border border-amber-500/30 text-amber-400 font-extrabold text-[10px] px-3 py-1 rounded-full uppercase tracking-wider"></span>
+            <h2 id="modal-post-title" class="text-xl sm:text-2xl font-black text-white leading-snug"></h2>
+            <div class="border-t border-zinc-800 pt-4">
+                <p id="modal-post-content" class="text-sm text-zinc-300 leading-relaxed whitespace-pre-line"></p>
+            </div>
+            <div class="pt-4 border-t border-zinc-800 text-right">
+                <button onclick="closePostModal()" class="px-6 py-2.5 bg-gold-gradient text-black font-extrabold text-xs rounded-xl">ĐÓNG BÀI VIẾT</button>
+            </div>
+        </div>
+    </div>
+
     <!-- JAVASCRIPT & SUPABASE INTERACTION -->
     <script>
         const SUPABASE_URL = 'https://eoyrhmahlatoodgoxtig.supabase.co';
@@ -521,7 +540,7 @@
                 { id: 2, name: 'Dây Chuyền Quật & Hấp Giò Chả Khép Kín', category: 'Dây chuyền', specifications: 'Đồng bộ từ máy xay thịt, quật chả đến tủ hấp điện điều khiển màn hình cảm ứng PLC.', image_url: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80', video_url: '#' }
             ],
             posts: [
-                { id: 1, title: 'Bí quyết tăng 40% năng suất làm giò chả với máy định lượng tự động', category: 'Kỹ thuật máy', summary: 'Ứng dụng công nghệ định lượng piston khí nén giúp tiết kiệm thời gian đóng gói và giữ nguyên độ dai của thịt.', image_url: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80' }
+                { id: 1, title: 'Bí quyết tăng 40% năng suất làm giò chả với máy định lượng tự động', category: 'Kỹ thuật máy', summary: 'Ứng dụng công nghệ định lượng piston khí nén giúp tiết kiệm thời gian đóng gói và giữ nguyên độ dai của thịt.', content: 'Nội dung chi tiết bài viết hướng dẫn...', image_url: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80' }
             ]
         };
 
@@ -686,7 +705,6 @@
             await Promise.all([renderProducts(), renderPosts()]);
         }
 
-        // --- HÀM RENDER SẢN PHẨM ĐÃ ĐƯỢC FIX LỖI && VÀ KHỚP CSDL ---
         async function renderProducts(catFilter = 'all') {
             const grid = document.getElementById('products-grid');
             let items = [];
@@ -748,7 +766,7 @@
                             <h3 class="font-bold text-white text-base mt-1 leading-snug">${post.title}</h3>
                             <p class="text-xs text-zinc-400 mt-2 leading-relaxed line-clamp-3">${post.summary || ''}</p>
                         </div>
-                       <button onclick="openPostModal('${post.title.replace(/'/g, "\\'")}', '${post.category || 'Kỹ thuật'}', '${(post.content || post.summary || 'Nội dung chi tiết đang cập nhật!').replace(/'/g, "\\'").replace(/\n/g, '\\n')}')" class="text-left text-xs font-bold text-amber-400 hover:underline pt-2">Đọc tiếp bài viết →</button>
+                        <button onclick="openPostModal('${post.title.replace(/'/g, "\\'")}', '${post.category || 'Kỹ thuật'}', '${(post.content || post.summary || 'Nội dung chi tiết đang cập nhật!').replace(/'/g, "\\'").replace(/\n/g, '\\n')}')" class="text-left text-xs font-bold text-amber-400 hover:underline pt-2">Đọc tiếp bài viết →</button>
                     </div>
                 `).join('');
             }
@@ -796,6 +814,7 @@
                 title: document.getElementById('post-title').value,
                 category: document.getElementById('post-cat').value,
                 summary: document.getElementById('post-summary').value,
+                content: document.getElementById('post-content').value || null,
                 image_url: document.getElementById('post-img').value || null
             };
 
@@ -818,32 +837,17 @@
             dlAnchor.remove();
             showToast('Đã xuất file dữ liệu dự phòng về máy!', 'success');
         }
-        <!-- MODAL XEM CHI TIẾT BÀI VIẾT -->
-<div id="post-modal" class="hidden fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center p-4">
-    <div class="bg-zinc-950 border border-amber-500/40 rounded-3xl p-6 sm:p-8 w-full max-w-2xl text-white shadow-2xl space-y-5 relative max-h-[90vh] overflow-y-auto">
-        <button onclick="closePostModal()" class="absolute top-4 right-4 text-zinc-400 hover:text-white text-xl bg-zinc-900 w-10 h-10 rounded-full flex items-center justify-center border border-zinc-800">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-        <span id="modal-post-cat" class="inline-block bg-amber-500/10 border border-amber-500/30 text-amber-400 font-extrabold text-[10px] px-3 py-1 rounded-full uppercase tracking-wider"></span>
-        <h2 id="modal-post-title" class="text-xl sm:text-2xl font-black text-white leading-snug"></h2>
-        <div class="border-t border-zinc-800 pt-4">
-            <p id="modal-post-content" class="text-sm text-zinc-300 leading-relaxed whitespace-pre-line"></p>
-        </div>
-        <div class="pt-4 border-t border-zinc-800 text-right">
-            <button onclick="closePostModal()" class="px-6 py-2.5 bg-gold-gradient text-black font-extrabold text-xs rounded-xl">ĐÓNG BÀI VIẾT</button>
-        </div>
-    </div>
-</div>
-        function openPostModal(title, category, content) {
-    document.getElementById('modal-post-title').innerText = title;
-    document.getElementById('modal-post-cat').innerText = category;
-    document.getElementById('modal-post-content').innerText = content;
-    document.getElementById('post-modal').classList.remove('hidden');
-}
 
-function closePostModal() {
-    document.getElementById('post-modal').classList.add('hidden');
-}
+        function openPostModal(title, category, content) {
+            document.getElementById('modal-post-title').innerText = title;
+            document.getElementById('modal-post-cat').innerText = category;
+            document.getElementById('modal-post-content').innerText = content;
+            document.getElementById('post-modal').classList.remove('hidden');
+        }
+
+        function closePostModal() {
+            document.getElementById('post-modal').classList.add('hidden');
+        }
     </script>
 </body>
 </html>
