@@ -540,6 +540,24 @@
             ]
         };
 
+        // Hàm chuyển đổi tiêu đề thành slug URL đẹp mắt
+        function createSlug(str) {
+            if (!str) return 'bai-viet';
+            str = str.toLowerCase();
+            str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+            str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+            str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+            str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+            str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+            str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+            str = str.replace(/đ/g, "d");
+            str = str.replace(/([^0-9a-z-\s])/g, "");
+            str = str.replace(/(\s+)/g, "-");
+            str = str.replace(/-+/g, "-");
+            str = str.replace(/^-+|-+$/g, "");
+            return str;
+        }
+
         window.onload = function() {
             try {
                 if (window.supabase) {
@@ -549,10 +567,9 @@
                 console.warn('Supabase loading notice:', err);
             }
 
-            const hash = window.location.hash;
-            if (hash.startsWith('#post-')) {
-                const postId = hash.replace('#post-', '');
-                loadAndOpenPost(postId);
+            const hash = window.location.hash.replace('#', '');
+            if (hash && hash !== 'home' && hash !== 'products' && hash !== 'posts' && hash !== 'admin') {
+                loadAndOpenPost(hash);
             } else {
                 showSection('home');
             }
@@ -762,25 +779,30 @@
             allPostsCache = items;
 
             if (grid) {
-                grid.innerHTML = items.map(post => `
-                    <div class="glass-gold-card rounded-2xl p-4 space-y-3 flex flex-col justify-between">
-                        <div>
-                            <img src="${post.image_url || 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80'}" class="w-full h-40 object-cover rounded-xl mb-3 border border-zinc-800">
-                            <span class="text-[10px] text-amber-400 font-extrabold uppercase tracking-wider">${post.category || 'Kỹ thuật'}</span>
-                            <h3 class="font-bold text-white text-base mt-1 leading-snug">${post.title}</h3>
-                            <p class="text-xs text-zinc-400 mt-2 leading-relaxed line-clamp-3">${post.summary || ''}</p>
+                grid.innerHTML = items.map(post => {
+                    const postSlug = post.slug || createSlug(post.title);
+                    return `
+                        <div class="glass-gold-card rounded-2xl p-4 space-y-3 flex flex-col justify-between">
+                            <div>
+                                <img src="${post.image_url || 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80'}" class="w-full h-40 object-cover rounded-xl mb-3 border border-zinc-800">
+                                <span class="text-[10px] text-amber-400 font-extrabold uppercase tracking-wider">${post.category || 'Kỹ thuật'}</span>
+                                <h3 class="font-bold text-white text-base mt-1 leading-snug">${post.title}</h3>
+                                <p class="text-xs text-zinc-400 mt-2 leading-relaxed line-clamp-3">${post.summary || ''}</p>
+                            </div>
+                            <button onclick="openPostDetail('${postSlug}')" class="text-left text-xs font-bold text-amber-400 hover:underline pt-2">Đọc tiếp bài viết →</button>
                         </div>
-                        <button onclick="openPostDetail('${post.id}')" class="text-left text-xs font-bold text-amber-400 hover:underline pt-2">Đọc tiếp bài viết →</button>
-                    </div>
-                `).join('');
+                    `;
+                }).join('');
             }
         }
 
-        function openPostDetail(postId) {
-            let post = allPostsCache.find(p => p.id == postId);
+        function openPostDetail(postSlug) {
+            let post = allPostsCache.find(p => (p.slug === postSlug) || (createSlug(p.title) === postSlug) || (p.id == postSlug));
             if (!post) {
                 post = sampleData.posts[0];
             }
+
+            const currentSlug = post.slug || createSlug(post.title);
 
             document.getElementById('detail-post-cat').innerText = post.category || 'Kỹ thuật';
             document.getElementById('detail-post-title').innerText = post.title || '';
@@ -796,11 +818,11 @@
                 imgContainer.classList.add('hidden');
             }
 
-            window.location.hash = 'post-' + postId;
+            window.location.hash = currentSlug;
             showSection('post-detail');
         }
 
-        async function loadAndOpenPost(postId) {
+        async function loadAndOpenPost(slugOrId) {
             let items = sampleData.posts;
             if (supabaseClient) {
                 try {
@@ -809,7 +831,7 @@
                 } catch(e) {}
             }
             allPostsCache = items;
-            openPostDetail(postId);
+            openPostDetail(slugOrId);
         }
 
         function switchAdminTab(tab) {
@@ -850,12 +872,14 @@
 
         async function handleAddPost(e) {
             e.preventDefault();
+            const titleVal = document.getElementById('post-title').value;
             const payload = {
-                title: document.getElementById('post-title').value,
+                title: titleVal,
                 category: document.getElementById('post-cat').value,
                 summary: document.getElementById('post-summary').value,
                 content: document.getElementById('post-content').value || null,
-                image_url: document.getElementById('post-img').value || null
+                image_url: document.getElementById('post-img').value || null,
+                slug: createSlug(titleVal)
             };
 
             if (supabaseClient) {
